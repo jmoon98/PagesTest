@@ -1,5 +1,8 @@
+res://scenes/receiver.tscn
+res://scenes/player.tscn
+res://scripts/receiver.gd
 res://scenes/test.tscn
 res://scenes/football.tscn
 res://scenes/throw_arrow.tscn
+res://scripts/player.gd
 res://scripts/throw_arrow.gd
-res://scripts/football.gd

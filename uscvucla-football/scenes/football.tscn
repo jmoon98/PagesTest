@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dhdijlhge3mte" path="res://sprites/football.png" id="1_n7rs2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ndr2n"]
-radius = 20.0249
-height = 57.8379
+radius = 16.9987
+height = 51.9959
 
 [node name="Football" type="CharacterBody2D"]
 script = ExtResource("1_7j741")
