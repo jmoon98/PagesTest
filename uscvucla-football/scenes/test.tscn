@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://c04dju357r4ch"]
+[gd_scene load_steps=7 format=3 uid="uid://c04dju357r4ch"]
 
 [ext_resource type="Texture2D" uid="uid://vu2q6cmnrntw" path="res://sprites/field.jpg" id="1_a5fmu"]
+[ext_resource type="Script" path="res://scenes/test.gd" id="1_k7s53"]
 [ext_resource type="PackedScene" uid="uid://cxqtcpag3hu6t" path="res://scenes/player.tscn" id="2_dx1fj"]
 [ext_resource type="PackedScene" uid="uid://dar5ii7mai42s" path="res://scenes/football.tscn" id="3_bwlbk"]
 [ext_resource type="PackedScene" uid="uid://biwxr5p2r81vh" path="res://scenes/throw_arrow.tscn" id="4_cb74x"]
 [ext_resource type="PackedScene" uid="uid://cubyt42p1fdwa" path="res://scenes/receiver.tscn" id="5_e22c5"]
 
 [node name="TestLevel" type="Node2D"]
+script = ExtResource("1_k7s53")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -19,12 +21,6 @@ texture = ExtResource("1_a5fmu")
 position = Vector2(85, 323)
 scale = Vector2(4, 4)
 
-[node name="Football" parent="." instance=ExtResource("3_bwlbk")]
-position = Vector2(160, 319)
-
-[node name="Throw_Arrow" parent="." instance=ExtResource("4_cb74x")]
-position = Vector2(158, 320)
-
 [node name="Receiver 1" parent="." instance=ExtResource("5_e22c5")]
 position = Vector2(574, 231)
 scale = Vector2(4, 4)
@@ -33,10 +29,21 @@ scale = Vector2(4, 4)
 position = Vector2(577, 364)
 scale = Vector2(4, 4)
 
+[node name="Football" parent="." instance=ExtResource("3_bwlbk")]
+position = Vector2(160, 319)
+
+[node name="Throw_Arrow" parent="." instance=ExtResource("4_cb74x")]
+position = Vector2(158, 320)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 331)
 zoom = Vector2(0.5, 0.5)
 
+[node name="Enemy_Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="enemy_spawned" from="." to="." method="_on_enemy_spawned"]
 [connection signal="start_throw" from="Player" to="Throw_Arrow" method="_on_player_start_throw"]
 [connection signal="throw_ball" from="Player" to="Football" method="_on_player_throw_ball"]
 [connection signal="throw_ball" from="Player" to="Throw_Arrow" method="_on_player_throw_ball"]
+[connection signal="timeout" from="Enemy_Timer" to="." method="_on_enemy_timer_timeout"]

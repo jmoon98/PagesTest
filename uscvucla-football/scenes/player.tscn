@@ -1,18 +1,143 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxqtcpag3hu6t"]
+[gd_scene load_steps=20 format=3 uid="uid://cxqtcpag3hu6t"]
 
-[ext_resource type="Texture2D" uid="uid://bff7mech7mrnn" path="res://sprites/uscplayer_idle.png" id="1_hm7os"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_nk2y4"]
+[ext_resource type="Texture2D" uid="uid://dhdynsipknc76" path="res://sprites/player_spritesheet.png" id="2_t48ga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go5sa"]
 size = Vector2(17, 26)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lcmh"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f60mo"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(30, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lscnd"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(60, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uwmo"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(90, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hufwm"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(120, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgni4"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(150, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k522f"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(180, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y03ro"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(210, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0kuy"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(240, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxnjb"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(0, 30, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1sg2"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(30, 30, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqn8w"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(60, 30, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djns8"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(90, 30, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qu4i"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(120, 30, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0rau"]
+atlas = ExtResource("2_t48ga")
+region = Rect2(0, 30, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_soeow"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lcmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f60mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lscnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uwmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hufwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgni4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k522f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y03ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0kuy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxnjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1sg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqn8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djns8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qu4i")
+}],
+"loop": false,
+"name": &"throw",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0rau")
+}],
+"loop": true,
+"name": &"throw_ready",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_nk2y4")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("1_hm7os")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_go5sa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_soeow")
+animation = &"throw"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

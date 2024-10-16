@@ -7,7 +7,8 @@
 radius = 16.9987
 height = 51.9959
 
-[node name="Football" type="CharacterBody2D"]
+[node name="Football" type="Area2D"]
+rotation = -1.55948
 script = ExtResource("1_7j741")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,3 +20,5 @@ texture = ExtResource("1_n7rs2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.55826
 shape = SubResource("CapsuleShape2D_ndr2n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
