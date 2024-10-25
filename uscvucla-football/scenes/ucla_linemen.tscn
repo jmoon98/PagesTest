@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://c4itiar62ux81"]
+
+[ext_resource type="Texture2D" uid="uid://cmj4v5xrs5g50" path="res://sprites/ucla_linemen.png" id="1_4bfxt"]
+[ext_resource type="Script" path="res://scenes/ucla_linemen.gd" id="1_ak4sd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqh6c"]
+atlas = ExtResource("1_4bfxt")
+region = Rect2(0, 30, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv0pj"]
+atlas = ExtResource("1_4bfxt")
+region = Rect2(30, 30, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xes3"]
+atlas = ExtResource("1_4bfxt")
+region = Rect2(60, 30, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk3rx"]
+atlas = ExtResource("1_4bfxt")
+region = Rect2(90, 30, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pogon"]
+atlas = ExtResource("1_4bfxt")
+region = Rect2(120, 30, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwexl"]
+atlas = ExtResource("1_4bfxt")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujo0i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqh6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv0pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xes3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk3rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pogon")
+}],
+"loop": true,
+"name": &"struggle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwexl")
+}],
+"loop": true,
+"name": &"wait",
+"speed": 5.0
+}]
+
+[node name="UCLA Linemen" type="Node2D"]
+script = ExtResource("1_ak4sd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ujo0i")
+animation = &"struggle"
+frame = 4
+frame_progress = 0.297896

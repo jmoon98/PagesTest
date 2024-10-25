@@ -339,3 +339,11 @@ animation = &"usc1 run"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_vrwpe")
+
+[node name="Direction_Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="random_run" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Direction_Timer" to="." method="_on_direction_timer_timeout"]

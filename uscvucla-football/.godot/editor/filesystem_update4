@@ -3,9 +3,12 @@ res://scenes/football.tscn
 res://scenes/throw_arrow.tscn
 res://scenes/receiver.tscn
 res://scenes/player.tscn
-res://scripts/football.gd
-res://scripts/receiver.gd
 res://scenes/enemy.tscn
 res://scenes/test.gd
+res://scripts/receiver.gd
 res://scenes/enemy.gd
-res://scripts/player.gd
+res://scenes/usc_linemen.tscn
+res://scenes/usc_linemen.gd
+res://scripts/test.gd
+res://scenes/ucla_linemen.tscn
+res://scenes/ucla_linemen.gd

@@ -1,14 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://c04dju357r4ch"]
 
 [ext_resource type="Texture2D" uid="uid://vu2q6cmnrntw" path="res://sprites/field.jpg" id="1_a5fmu"]
-[ext_resource type="Script" path="res://scenes/test.gd" id="1_k7s53"]
+[ext_resource type="Script" path="res://scripts/test.gd" id="1_orlxx"]
 [ext_resource type="PackedScene" uid="uid://cxqtcpag3hu6t" path="res://scenes/player.tscn" id="2_dx1fj"]
 [ext_resource type="PackedScene" uid="uid://dar5ii7mai42s" path="res://scenes/football.tscn" id="3_bwlbk"]
 [ext_resource type="PackedScene" uid="uid://biwxr5p2r81vh" path="res://scenes/throw_arrow.tscn" id="4_cb74x"]
-[ext_resource type="PackedScene" uid="uid://cubyt42p1fdwa" path="res://scenes/receiver.tscn" id="5_e22c5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj8n8"]
+size = Vector2(1224, 172)
 
 [node name="TestLevel" type="Node2D"]
-script = ExtResource("1_k7s53")
+script = ExtResource("1_orlxx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -19,14 +21,6 @@ texture = ExtResource("1_a5fmu")
 
 [node name="Player" parent="." instance=ExtResource("2_dx1fj")]
 position = Vector2(85, 323)
-scale = Vector2(4, 4)
-
-[node name="Receiver 1" parent="." instance=ExtResource("5_e22c5")]
-position = Vector2(574, 231)
-scale = Vector2(4, 4)
-
-[node name="Receiver 2" parent="." instance=ExtResource("5_e22c5")]
-position = Vector2(577, 364)
 scale = Vector2(4, 4)
 
 [node name="Football" parent="." instance=ExtResource("3_bwlbk")]
@@ -41,6 +35,12 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="Enemy_Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(571, -77)
+shape = SubResource("RectangleShape2D_fj8n8")
 
 [connection signal="enemy_spawned" from="." to="." method="_on_enemy_spawned"]
 [connection signal="start_throw" from="Player" to="Throw_Arrow" method="_on_player_start_throw"]
