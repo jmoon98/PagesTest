@@ -4,62 +4,40 @@ var enemy: PackedScene = preload("res://scenes/enemy.tscn")
 var receiver: PackedScene = preload("res://scenes/receiver.tscn")
 var usc_linemen: PackedScene = preload("res://scenes/usc_linemen.tscn")
 var ucla_linemen: PackedScene = preload("res://scenes/ucla_linemen.tscn")
+var usc_lm_count: int = 0
+var ucla_lm_count: int = 0
+var receiver_count: int = 0
+var enemy_count: int = 0
 signal enemy_spawned(player_pos)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# i'm going to clean these up later in a separate function; 
-	# just wanted to get a working thing quick
 	var usc_lm1 = usc_linemen.instantiate()
-	usc_lm1.scale = Vector2(4.5, 4.5)
-	usc_lm1.position = Vector2(500, 150)
-	add_child(usc_lm1)
-	usc_lm1.move_child(usc_lm1, $"..".get_child_count() - 1)
 	var usc_lm2 = usc_linemen.instantiate()
-	usc_lm2.scale = Vector2(4.5, 4.5)
-	usc_lm2.position = Vector2(500, 250)
-	add_child(usc_lm2)
-	usc_lm1.move_child(usc_lm2, $"..".get_child_count() - 1)
 	var usc_lm3 = usc_linemen.instantiate()
-	usc_lm3.scale = Vector2(4.5, 4.5)
-	usc_lm3.position = Vector2(500, 350)
-	add_child(usc_lm3)
-	usc_lm1.move_child(usc_lm3, $"..".get_child_count() - 1)
 	var usc_lm4 = usc_linemen.instantiate()
-	usc_lm4.scale = Vector2(4.5, 4.5)
-	usc_lm4.position = Vector2(500, 450)
-	add_child(usc_lm4)
-	usc_lm4.move_child(usc_lm4, $"..".get_child_count() - 1)
 	var usc_lm5 = usc_linemen.instantiate()
-	usc_lm5.scale = Vector2(4.5, 4.5)
-	usc_lm5.position = Vector2(500, 550)
-	add_child(usc_lm5)
-	usc_lm5.move_child(usc_lm5, $"..".get_child_count() - 1)
+	var usc_linemen = [usc_lm1, usc_lm2, usc_lm3, usc_lm4, usc_lm5]
+	for lineman in usc_linemen:
+		setup_usc_linemen(lineman)
 	
 	var ucla_lm1 = ucla_linemen.instantiate()
-	ucla_lm1.scale = Vector2(-1*4.5, 4.5)
-	ucla_lm1.position = Vector2(585, 150)
-	add_child(ucla_lm1)
 	var ucla_lm2 = ucla_linemen.instantiate()
-	ucla_lm2.scale = Vector2(-1*4.5, 4.5)
-	ucla_lm2.position = Vector2(585, 250)
-	add_child(ucla_lm2)
 	var ucla_lm3 = ucla_linemen.instantiate()
-	ucla_lm3.scale = Vector2(-1*4.5, 4.5)
-	ucla_lm3.position = Vector2(585, 350)
-	add_child(ucla_lm3)
 	var ucla_lm4 = ucla_linemen.instantiate()
-	ucla_lm4.scale = Vector2(-1*4.5, 4.5)
-	ucla_lm4.position = Vector2(585, 450)
-	add_child(ucla_lm4)
 	var ucla_lm5 = ucla_linemen.instantiate()
-	ucla_lm5.scale = Vector2(-1*4.5, 4.5)
-	ucla_lm5.position = Vector2(585, 550)
-	add_child(ucla_lm5)
+	var ucla_linemen = [ucla_lm1, ucla_lm2, ucla_lm3, ucla_lm4, ucla_lm5]
+	for lineman in ucla_linemen:
+		setup_ucla_linemen(lineman)
 	
-	var rand_enemy_time = randi_range(2, 5)
+	var receiver1 = receiver.instantiate()
+	var receiver2 = receiver.instantiate()
+	setup_receiver(receiver1)
+	setup_receiver(receiver2)
+	
+	var rand_enemy_time = randi_range(1, 3)
 	$Enemy_Timer.wait_time = rand_enemy_time
-	print("Rush after: ", rand_enemy_time)
+	# print("Rush after: ", rand_enemy_time)
 	$Enemy_Timer.start()
 
 
@@ -73,25 +51,36 @@ func _on_enemy_timer_timeout() -> void:
 	print("Enemy team start rush")
 	var enemy1 = enemy.instantiate()
 	var enemy2 = enemy.instantiate()
-	enemy_spawned.emit($Player.position)
-	enemy1.scale = Vector2(4, 4)
-	enemy2.scale = Vector2(4, 4)
-	enemy1.position = Vector2(500, 150)
-	enemy1.scale.x *= -1
-	enemy2.position = Vector2(500, 450)
-	enemy2.scale.x *= -1
-	add_child(enemy1)
-	add_child(enemy2)
-	move_child(enemy1, 1)
-	move_child(enemy2, 2)
+	setup_enemies(enemy1)
+	setup_enemies(enemy2)
+
+# ===== FUNCTIONS TO INITIALLY SETUP ENEMIES AND LINEMEN =====
+func setup_usc_linemen(lineman) -> void:
+	lineman.scale = Vector2(4.5, 4.5)
+	lineman.position = Vector2(500, 150 + usc_lm_count*100)
+	usc_lm_count += 1
+	add_child(lineman)
+	lineman.move_child(lineman, $"..".get_child_count() - 1)
 	
-	var receiver1 = receiver.instantiate()
-	var receiver2 = receiver.instantiate()
-	receiver1.scale = Vector2(4, 4)
-	receiver2.scale = Vector2(4, 4)
-	receiver1.position = Vector2(550, 150)
-	receiver2.position = Vector2(550, 450)
-	add_child(receiver1)
-	add_child(receiver2)
-	move_child(receiver1, 3)
-	move_child(receiver2, 4)
+func setup_ucla_linemen(lineman) -> void:
+	lineman.scale = Vector2(-1*4.5, 4.5)
+	lineman.position = Vector2(585, 150 + ucla_lm_count*100)
+	ucla_lm_count += 1
+	add_child(lineman)
+	lineman.move_child(lineman, $"..".get_child_count() - 1)
+	
+func setup_receiver(receiver) -> void:
+	receiver.scale = Vector2(4, 4)
+	receiver.position = Vector2(550, 150 + receiver_count*300)
+	add_child(receiver)
+	receiver_count += 1
+	move_child(receiver, receiver_count)
+	
+func setup_enemies(enemy) -> void:
+	enemy.scale = Vector2(-4, 4)
+	enemy.position = Vector2(500, 150 + 300*enemy_count)
+	enemy_count += 1
+	add_child(enemy)
+	move_child(enemy, enemy_count+1)
+	
+	

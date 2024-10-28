@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var type
-var speed: int = 200
+var speed: int = 150
 var new_dir: int
 var id: String = "receiver"
 
@@ -10,9 +10,8 @@ func _ready() -> void:
 	type = randi_range(1, 4)
 	$"AnimatedSprite2D".play("idle" + str(type))
 	# await get_tree().create_timer(2).timeout
-	print("start running")
+	# print("start running")
 	$"AnimatedSprite2D".play("usc" + str(type) + " run")
-	#TODO: Running code
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,7 +32,7 @@ func random_run() -> void:
 	if $Direction_Timer.is_stopped():
 		var rand_timer: int = randi_range(0, 1)
 		$Direction_Timer.wait_time = rand_timer
-		print(name, " changing direction in: ", rand_timer)
+		# print(name, " changing direction in: ", rand_timer)
 		$Direction_Timer.start()
 
 
