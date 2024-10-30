@@ -57,28 +57,28 @@ func _on_enemy_timer_timeout() -> void:
 # ===== FUNCTIONS TO INITIALLY SETUP ENEMIES AND LINEMEN =====
 func setup_usc_linemen(lineman) -> void:
 	lineman.scale = Vector2(4.5, 4.5)
-	lineman.position = Vector2(500, 150 + usc_lm_count*100)
+	lineman.position = Vector2(150, 150 + usc_lm_count*100)
 	usc_lm_count += 1
 	add_child(lineman)
 	lineman.move_child(lineman, $"..".get_child_count() - 1)
 	
 func setup_ucla_linemen(lineman) -> void:
 	lineman.scale = Vector2(-1*4.5, 4.5)
-	lineman.position = Vector2(585, 150 + ucla_lm_count*100)
+	lineman.position = Vector2(235, 150 + ucla_lm_count*100)
 	ucla_lm_count += 1
 	add_child(lineman)
 	lineman.move_child(lineman, $"..".get_child_count() - 1)
 	
 func setup_receiver(receiver) -> void:
 	receiver.scale = Vector2(4, 4)
-	receiver.position = Vector2(550, 150 + receiver_count*300)
+	receiver.position = Vector2(200, 150 + receiver_count*300)
 	add_child(receiver)
 	receiver_count += 1
 	move_child(receiver, receiver_count)
 	
 func setup_enemies(enemy) -> void:
 	enemy.scale = Vector2(-4, 4)
-	enemy.position = Vector2(500, 150 + 300*enemy_count)
+	enemy.position = Vector2(150, 150 + 300*enemy_count)
 	enemy_count += 1
 	add_child(enemy)
 	move_child(enemy, enemy_count+1)

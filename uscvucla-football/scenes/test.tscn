@@ -20,14 +20,14 @@ scale = Vector2(4.77, 4.77)
 texture = ExtResource("1_a5fmu")
 
 [node name="Player" parent="." instance=ExtResource("2_dx1fj")]
-position = Vector2(85, 323)
+position = Vector2(-233, 323)
 scale = Vector2(4, 4)
 
 [node name="Football" parent="." instance=ExtResource("3_bwlbk")]
-position = Vector2(160, 319)
+position = Vector2(-165, 319)
 
 [node name="Throw_Arrow" parent="." instance=ExtResource("4_cb74x")]
-position = Vector2(158, 320)
+position = Vector2(-146, 320)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 331)
