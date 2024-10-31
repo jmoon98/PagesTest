@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwdbhfqjsh7ac"]
+
+[ext_resource type="Script" path="res://scripts/score.gd" id="1_71iyx"]
+[ext_resource type="Script" path="res://scripts/countdown.gd" id="2_5lr1q"]
+[ext_resource type="Script" path="res://scripts/attempts.gd" id="3_w1ke6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_te31p"]
+font_size = 64
+font_color = Color(0.752941, 0.168627, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_04nxj"]
+font_size = 128
+font_color = Color(0.79005, 0.786604, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3jmhg"]
+font_size = 64
+font_color = Color(0.800491, 0.800491, 0.800491, 1)
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_te31p")
+script = ExtResource("1_71iyx")
+
+[node name="Countdown" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 90.0
+offset_bottom = 73.0
+label_settings = SubResource("LabelSettings_04nxj")
+script = ExtResource("2_5lr1q")
+
+[node name="Attempts" type="Label" parent="."]
+layout_mode = 0
+offset_left = 705.0
+offset_top = 526.0
+offset_right = 813.0
+offset_bottom = 617.0
+label_settings = SubResource("LabelSettings_3jmhg")
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("3_w1ke6")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c4itiar62ux81"]
 
 [ext_resource type="Texture2D" uid="uid://cmj4v5xrs5g50" path="res://sprites/ucla_linemen.png" id="1_4bfxt"]
-[ext_resource type="Script" path="res://scenes/ucla_linemen.gd" id="1_ak4sd"]
+[ext_resource type="Script" path="res://scripts/ucla_linemen.gd" id="1_ak4sd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqh6c"]
 atlas = ExtResource("1_4bfxt")
