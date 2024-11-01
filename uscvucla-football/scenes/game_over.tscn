@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmesa55u1b8pk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4flwv"]
+font_size = 64
+font_color = Color(0.999067, 0, 0.188515, 1)
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+z_index = 3
+
+[node name="Game Over Text" type="Label" parent="."]
+z_index = 4
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Game Day is Over!"
+label_settings = SubResource("LabelSettings_4flwv")

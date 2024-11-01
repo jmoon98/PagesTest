@@ -1,7 +1,7 @@
 extends Area2D
 
 var type
-var speed: int = 45
+var speed: int = 100
 var direction: Vector2
 
 signal lose
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player": #TODO if the ball is still in midair, this shouldn't lose
+	if body.name == "Player" && Global.hasBall: #TODO if the ball is still in midair, this shouldn't lose
 		speed = 0
 		Global.attempts -= 1
 		lose.emit() #lose round signal

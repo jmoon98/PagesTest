@@ -4,6 +4,7 @@ var ball_speed: int = 0
 var thrown: bool = false
 
 signal score
+signal lose
 
 func _ready():
 	visible = false
@@ -21,8 +22,6 @@ func _on_player_throw_ball(throw_charge, throw_dir) -> void:
 		ball_speed = throw_charge
 		thrown = true
 
-# TODO: If ball misses (hits end of stage), should emit lose
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("receive_ball"):
 		score.emit() #score signal
@@ -30,3 +29,15 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free()
 		print("Successful pass!")
 		get_tree().reload_current_scene()
+
+#when the ball leaves the screen, emit lose
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	print("Ball exited")
+	Global.attempts -= 1
+	lose.emit() #lose round signal
+	if Global.attempts > 0:
+		print("You lose!")
+		get_tree().reload_current_scene()
+	else:
+		#TODO: game over
+		pass

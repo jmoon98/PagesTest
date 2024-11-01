@@ -9,6 +9,7 @@ signal start_throw
 
 func _ready():
 	$AnimatedSprite2D.play("idle")
+	Global.hasBall = true
 	# for football visually flying over linemen
 	# get_parent().move_child($"../Football", 0)
 
@@ -23,6 +24,7 @@ func _physics_process(delta: float) -> void:
 		var throw_dir: Vector2 = (get_global_mouse_position()-position).normalized()
 		throw_ball.emit(throw_charge, throw_dir)
 		thrown = true
+		Global.hasBall = false
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
 var type
-var speed: int = 150
+var speed: int = 200
 var new_dir: int
 var id: String = "receiver"
 
+signal lose
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.exitedReceivers = 2
 	type = randi_range(1, 4)
 	$"AnimatedSprite2D".play("idle" + str(type))
 	# await get_tree().create_timer(2).timeout
@@ -38,3 +41,17 @@ func random_run() -> void:
 
 func _on_direction_timer_timeout() -> void:
 	new_dir = randi_range(-1, 1)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	Global.exitedReceivers -= 1
+	print("Receiver exited")
+	if Global.exitedReceivers == 0:
+		Global.attempts -= 1
+		lose.emit() #lose round signal
+		if Global.attempts > 0:
+			print("You lose!")
+			get_tree().reload_current_scene()
+		else:
+			#TODO: game over
+			pass

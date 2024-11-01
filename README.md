@@ -1,3 +1,5 @@
 # annenberg_team_long
 
-Jon test
+Steven TODO notes:
+Countdown
+Game Over Screen
