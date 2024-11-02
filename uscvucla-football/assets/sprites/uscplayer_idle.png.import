@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb03y3mdvd5nt"
-path="res://.godot/imported/linemen.png-6153d4dd86cd290165100462b75824f8.ctex"
+uid="uid://bff7mech7mrnn"
+path="res://.godot/imported/uscplayer_idle.png-35611412ddd2ac9528a86302ac3cd974.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/linemen.png"
-dest_files=["res://.godot/imported/linemen.png-6153d4dd86cd290165100462b75824f8.ctex"]
+source_file="res://assets/sprites/uscplayer_idle.png"
+dest_files=["res://.godot/imported/uscplayer_idle.png-35611412ddd2ac9528a86302ac3cd974.ctex"]
 
 [params]
 

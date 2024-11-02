@@ -39,5 +39,4 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 		print("You lose!")
 		get_tree().reload_current_scene()
 	else:
-		#TODO: game over
 		pass

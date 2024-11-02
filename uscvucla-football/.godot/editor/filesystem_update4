@@ -7,9 +7,11 @@ res://scenes/enemy.tscn
 res://scenes/usc_linemen.tscn
 res://scenes/ucla_linemen.tscn
 res://scenes/UI.tscn
+res://scenes/game_over.tscn
+res://scripts/global.gd
+res://scripts/test.gd
+res://scripts/finalscore.gd
+res://scripts/football.gd
+res://scripts/gg.gd
 res://scripts/enemy.gd
 res://scripts/receiver.gd
-res://scripts/football.gd
-res://scripts/global.gd
-res://scripts/player.gd
-res://scenes/game_over.tscn

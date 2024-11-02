@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhdijlhge3mte"
-path="res://.godot/imported/football.png-306caabd0d7bc5d22c30bf5b1719db49.ctex"
+uid="uid://vu2q6cmnrntw"
+path="res://.godot/imported/field.jpg-29efd7ade8580035b4f9c6ffa412bd61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/football.png"
-dest_files=["res://.godot/imported/football.png-306caabd0d7bc5d22c30bf5b1719db49.ctex"]
+source_file="res://assets/sprites/field.jpg"
+dest_files=["res://.godot/imported/field.jpg-29efd7ade8580035b4f9c6ffa412bd61.ctex"]
 
 [params]
 

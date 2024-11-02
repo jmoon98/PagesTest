@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bir7mnihptcc5"
-path="res://.godot/imported/ucla_running.png-9cd6727903fad0ae576f62a5e1ac7734.ctex"
+uid="uid://bb03y3mdvd5nt"
+path="res://.godot/imported/linemen.png-de94c05e784ca41c00a954b0d79a74fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ucla_running.png"
-dest_files=["res://.godot/imported/ucla_running.png-9cd6727903fad0ae576f62a5e1ac7734.ctex"]
+source_file="res://assets/sprites/linemen.png"
+dest_files=["res://.godot/imported/linemen.png-de94c05e784ca41c00a954b0d79a74fa.ctex"]
 
 [params]
 

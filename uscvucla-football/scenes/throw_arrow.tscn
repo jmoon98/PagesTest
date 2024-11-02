@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://biwxr5p2r81vh"]
 
 [ext_resource type="Script" path="res://scripts/throw_arrow.gd" id="1_d0xtt"]
-[ext_resource type="Texture2D" uid="uid://d18tg278ppdjm" path="res://sprites/arrow2.png" id="1_fmxxb"]
+[ext_resource type="Texture2D" uid="uid://d18tg278ppdjm" path="res://assets/sprites/arrow2.png" id="1_fmxxb"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_d0xtt")

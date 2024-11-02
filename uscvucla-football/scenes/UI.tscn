@@ -26,8 +26,10 @@ grow_vertical = 2
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 288.0
+offset_top = -204.0
+offset_right = 348.0
+offset_bottom = -116.0
 label_settings = SubResource("LabelSettings_te31p")
 script = ExtResource("1_71iyx")
 
@@ -43,10 +45,10 @@ script = ExtResource("2_5lr1q")
 
 [node name="Attempts" type="Label" parent="."]
 layout_mode = 0
-offset_left = 705.0
-offset_top = 526.0
-offset_right = 813.0
-offset_bottom = 617.0
+offset_left = 198.0
+offset_top = 768.0
+offset_right = 361.0
+offset_bottom = 856.0
 label_settings = SubResource("LabelSettings_3jmhg")
 horizontal_alignment = 2
 vertical_alignment = 2

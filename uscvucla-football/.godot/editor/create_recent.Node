@@ -1,4 +1,9 @@
 Label
+Panel
+Button
+ColorRect
+Node2D
+AudioStreamPlayer2D
 CanvasModulate
 CanvasLayer
 VisibleOnScreenNotifier2D
@@ -7,7 +12,3 @@ AnimatedSprite2D
 CollisionShape2D
 StaticBody2D
 Timer
-Sprite2D
-Area2D
-Camera2D
-CharacterBody2D

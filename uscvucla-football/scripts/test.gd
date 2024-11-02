@@ -39,11 +39,12 @@ func _ready() -> void:
 	$Enemy_Timer.wait_time = rand_enemy_time
 	# print("Rush after: ", rand_enemy_time)
 	$Enemy_Timer.start()
+	$AudioStreamPlayer2D.play(Global.musicProgress)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	Global.musicProgress = $AudioStreamPlayer2D.get_playback_position()   
 
 
 func _on_enemy_timer_timeout() -> void:

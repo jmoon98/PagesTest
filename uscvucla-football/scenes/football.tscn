@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dar5ii7mai42s"]
 
 [ext_resource type="Script" path="res://scripts/football.gd" id="1_7j741"]
-[ext_resource type="Texture2D" uid="uid://dhdijlhge3mte" path="res://sprites/football.png" id="1_n7rs2"]
+[ext_resource type="Texture2D" uid="uid://dhdijlhge3mte" path="res://assets/sprites/football.png" id="1_n7rs2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ndr2n"]
 radius = 16.9987

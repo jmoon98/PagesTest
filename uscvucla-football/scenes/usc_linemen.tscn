@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://b6ntdi6panivx"]
 
 [ext_resource type="Script" path="res://scripts/usc_linemen.gd" id="1_4fbx3"]
-[ext_resource type="Texture2D" uid="uid://bb03y3mdvd5nt" path="res://sprites/linemen.png" id="1_ikmh4"]
+[ext_resource type="Texture2D" uid="uid://bb03y3mdvd5nt" path="res://assets/sprites/linemen.png" id="1_ikmh4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wgurb"]
 atlas = ExtResource("1_ikmh4")

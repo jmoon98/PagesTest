@@ -30,5 +30,4 @@ func _on_body_entered(body: Node2D) -> void:
 			print("You lose!")
 			get_tree().reload_current_scene()
 		else:
-			# TODO: game over
 			pass
