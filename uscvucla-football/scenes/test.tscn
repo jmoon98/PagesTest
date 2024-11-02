@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://c04dju357r4ch"]
 
-[ext_resource type="Texture2D" uid="uid://vu2q6cmnrntw" path="res://assets/sprites/field.jpg" id="1_a5fmu"]
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_orlxx"]
 [ext_resource type="PackedScene" uid="uid://cxqtcpag3hu6t" path="res://scenes/player.tscn" id="2_dx1fj"]
+[ext_resource type="Texture2D" uid="uid://ltodsqsmw87u" path="res://assets/sprites/BACKDROP.png" id="2_y61uy"]
 [ext_resource type="PackedScene" uid="uid://dar5ii7mai42s" path="res://scenes/football.tscn" id="3_bwlbk"]
 [ext_resource type="PackedScene" uid="uid://biwxr5p2r81vh" path="res://scenes/throw_arrow.tscn" id="4_cb74x"]
 [ext_resource type="PackedScene" uid="uid://bwdbhfqjsh7ac" path="res://scenes/UI.tscn" id="6_1m6by"]
@@ -16,11 +16,9 @@ size = Vector2(1224, 172)
 script = ExtResource("1_orlxx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(140, -292)
-scale = Vector2(4.77, 4.77)
-texture = ExtResource("1_a5fmu")
+position = Vector2(572, 359)
+scale = Vector2(1.94187, 1.94187)
+texture = ExtResource("2_y61uy")
 
 [node name="Player" parent="." instance=ExtResource("2_dx1fj")]
 position = Vector2(-233, 323)
@@ -43,6 +41,12 @@ one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(571, -77)
+shape = SubResource("RectangleShape2D_fj8n8")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(571, 719)
 shape = SubResource("RectangleShape2D_fj8n8")
 
 [node name="Ui" parent="." instance=ExtResource("6_1m6by")]
