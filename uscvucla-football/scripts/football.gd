@@ -26,6 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("receive_ball"):
 		score.emit() #score signal
 		Global.score += 6
+		Global.streak += 1
 		queue_free()
 		print("Successful pass!")
 		get_tree().reload_current_scene()

@@ -1,2 +1,4 @@
 res://scenes/test.tscn
+res://scripts/global.gd
+res://scripts/football.gd
 res://scenes/score_manager.gd
