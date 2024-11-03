@@ -1,24 +1,204 @@
-[gd_scene load_steps=10 format=3 uid="uid://c04dju357r4ch"]
+[gd_scene load_steps=41 format=3 uid="uid://c04dju357r4ch"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_orlxx"]
+[ext_resource type="Texture2D" uid="uid://ddjkw5tfrtluy" path="res://assets/sprites/BACKDROP (1).png" id="2_dlk4w"]
 [ext_resource type="PackedScene" uid="uid://cxqtcpag3hu6t" path="res://scenes/player.tscn" id="2_dx1fj"]
-[ext_resource type="Texture2D" uid="uid://ltodsqsmw87u" path="res://assets/sprites/BACKDROP.png" id="2_y61uy"]
 [ext_resource type="PackedScene" uid="uid://dar5ii7mai42s" path="res://scenes/football.tscn" id="3_bwlbk"]
 [ext_resource type="PackedScene" uid="uid://biwxr5p2r81vh" path="res://scenes/throw_arrow.tscn" id="4_cb74x"]
 [ext_resource type="PackedScene" uid="uid://bwdbhfqjsh7ac" path="res://scenes/UI.tscn" id="6_1m6by"]
 [ext_resource type="AudioStream" uid="uid://xwo33eerweop" path="res://assets/sounds/Ludum Dare 30 04.ogg" id="7_xqjtu"]
 [ext_resource type="PackedScene" uid="uid://cmesa55u1b8pk" path="res://scenes/game_over.tscn" id="8_i55yk"]
+[ext_resource type="Texture2D" uid="uid://b8l44wfqy72ax" path="res://assets/sprites/scoreboard/SCOREBOARD.png" id="9_b7ntm"]
+[ext_resource type="Texture2D" uid="uid://dlv4m0m3rrq40" path="res://assets/sprites/scoreboard/0.png" id="10_jpmuu"]
+[ext_resource type="Texture2D" uid="uid://c17tkj0fb8f8c" path="res://assets/sprites/scoreboard/1.png" id="11_mpong"]
+[ext_resource type="Texture2D" uid="uid://wneqg6u47y34" path="res://assets/sprites/scoreboard/2.png" id="12_6x4wc"]
+[ext_resource type="Texture2D" uid="uid://crfnyukabvg8s" path="res://assets/sprites/scoreboard/3.png" id="13_445bu"]
+[ext_resource type="Texture2D" uid="uid://dqhcyuk6ensii" path="res://assets/sprites/scoreboard/4.png" id="14_h10uj"]
+[ext_resource type="Texture2D" uid="uid://cicdvkobky5rm" path="res://assets/sprites/scoreboard/5.png" id="15_mhjph"]
+[ext_resource type="Texture2D" uid="uid://dx72agihykal6" path="res://assets/sprites/scoreboard/6.png" id="16_2ks32"]
+[ext_resource type="Texture2D" uid="uid://duv3mci6fh6l8" path="res://assets/sprites/scoreboard/7.png" id="17_j3tt5"]
+[ext_resource type="Texture2D" uid="uid://dlwsao77ihj0k" path="res://assets/sprites/scoreboard/8.png" id="18_4ytch"]
+[ext_resource type="Texture2D" uid="uid://c8je4dgv7b6h1" path="res://assets/sprites/scoreboard/9.png" id="19_72hs8"]
+[ext_resource type="Script" path="res://scenes/score_manager.gd" id="20_hvlw1"]
+[ext_resource type="Texture2D" uid="uid://rkbisok3u8wq" path="res://assets/sprites/scoreboard/lives_1.png" id="21_xydg0"]
+[ext_resource type="Texture2D" uid="uid://dgoi6utlg1r21" path="res://assets/sprites/scoreboard/lives_2.png" id="22_m4jm7"]
+[ext_resource type="Texture2D" uid="uid://d1iyoanws3i0x" path="res://assets/sprites/scoreboard/lives_3.png" id="23_35wwj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj8n8"]
 size = Vector2(1224, 172)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cupe"]
+atlas = ExtResource("10_jpmuu")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y6yt"]
+atlas = ExtResource("11_mpong")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn3y0"]
+atlas = ExtResource("12_6x4wc")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iybfo"]
+atlas = ExtResource("13_445bu")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3tmt"]
+atlas = ExtResource("14_h10uj")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tamr"]
+atlas = ExtResource("15_mhjph")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrm5a"]
+atlas = ExtResource("16_2ks32")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p613h"]
+atlas = ExtResource("17_j3tt5")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j6ig"]
+atlas = ExtResource("18_4ytch")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxf8e"]
+atlas = ExtResource("19_72hs8")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x8r3a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cupe")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y6yt")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn3y0")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iybfo")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3tmt")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tamr")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrm5a")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p613h")
+}],
+"loop": true,
+"name": &"7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j6ig")
+}],
+"loop": true,
+"name": &"8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxf8e")
+}],
+"loop": true,
+"name": &"9",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bfvvi"]
+font_size = 30
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjhgs"]
+atlas = ExtResource("21_xydg0")
+region = Rect2(0, 0, 40, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56b5k"]
+atlas = ExtResource("22_m4jm7")
+region = Rect2(0, 0, 40, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t85s"]
+atlas = ExtResource("23_35wwj")
+region = Rect2(0, 0, 40, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_44vpv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjhgs")
+}],
+"loop": true,
+"name": &"life_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56b5k")
+}],
+"loop": true,
+"name": &"life_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2t85s")
+}],
+"loop": true,
+"name": &"life_3",
+"speed": 5.0
+}]
+
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_orlxx")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Backdrop" type="Sprite2D" parent="."]
 position = Vector2(572, 359)
 scale = Vector2(1.94187, 1.94187)
-texture = ExtResource("2_y61uy")
+texture = ExtResource("2_dlk4w")
 
 [node name="Player" parent="." instance=ExtResource("2_dx1fj")]
 position = Vector2(-233, 323)
@@ -40,13 +220,13 @@ one_shot = true
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(571, -77)
+position = Vector2(575, -112)
 shape = SubResource("RectangleShape2D_fj8n8")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(571, 719)
+position = Vector2(567, 869)
 shape = SubResource("RectangleShape2D_fj8n8")
 
 [node name="Ui" parent="." instance=ExtResource("6_1m6by")]
@@ -58,6 +238,63 @@ parameters/looping = true
 [node name="Game Over" parent="." instance=ExtResource("8_i55yk")]
 visible = false
 z_index = 25
+
+[node name="Scoreboard" type="Sprite2D" parent="."]
+position = Vector2(572.25, -181.125)
+scale = Vector2(1.35875, 1.35875)
+texture = ExtResource("9_b7ntm")
+
+[node name="Distance_1" type="AnimatedSprite2D" parent="Scoreboard"]
+position = Vector2(-70.0361, 16.6065)
+scale = Vector2(0.723827, 0.723827)
+sprite_frames = SubResource("SpriteFrames_x8r3a")
+animation = &"3"
+
+[node name="Distance_10" type="AnimatedSprite2D" parent="Scoreboard"]
+position = Vector2(-141.516, 16.6065)
+scale = Vector2(0.723827, 0.723827)
+sprite_frames = SubResource("SpriteFrames_x8r3a")
+animation = &"2"
+
+[node name="Streak_10" type="AnimatedSprite2D" parent="Scoreboard"]
+position = Vector2(75.8123, 16.6065)
+scale = Vector2(0.723827, 0.723827)
+sprite_frames = SubResource("SpriteFrames_x8r3a")
+animation = &"0"
+
+[node name="Streak_1" type="AnimatedSprite2D" parent="Scoreboard"]
+position = Vector2(154.513, 16.6065)
+scale = Vector2(0.723827, 0.723827)
+sprite_frames = SubResource("SpriteFrames_x8r3a")
+animation = &"3"
+
+[node name="ScoreManager" type="Node2D" parent="Scoreboard"]
+script = ExtResource("20_hvlw1")
+
+[node name="Label" type="Label" parent="Scoreboard"]
+offset_left = -183.441
+offset_top = -78.6568
+offset_right = -39.4407
+offset_bottom = -36.6568
+text = "DISTANCE"
+label_settings = SubResource("LabelSettings_bfvvi")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Scoreboard"]
+offset_left = 39.5584
+offset_top = -78.6568
+offset_right = 183.558
+offset_bottom = -36.6568
+text = "STREAK
+"
+label_settings = SubResource("LabelSettings_bfvvi")
+horizontal_alignment = 1
+
+[node name="LifeIndicator" type="AnimatedSprite2D" parent="Scoreboard"]
+position = Vector2(2.69264e-05, 53.4499)
+scale = Vector2(0.947562, 0.998097)
+sprite_frames = SubResource("SpriteFrames_44vpv")
+animation = &"life_3"
 
 [connection signal="enemy_spawned" from="." to="." method="_on_enemy_spawned"]
 [connection signal="start_throw" from="Player" to="Throw_Arrow" method="_on_player_start_throw"]

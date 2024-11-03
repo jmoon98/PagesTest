@@ -1,10 +1,2 @@
 res://scenes/test.tscn
-res://scenes/football.tscn
-res://scenes/throw_arrow.tscn
-res://scenes/receiver.tscn
-res://scenes/player.tscn
-res://scenes/enemy.tscn
-res://scenes/usc_linemen.tscn
-res://scenes/ucla_linemen.tscn
-res://scenes/UI.tscn
-res://scenes/game_over.tscn
+res://scenes/score_manager.gd
