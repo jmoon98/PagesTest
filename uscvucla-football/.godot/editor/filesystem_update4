@@ -1,8 +1,1 @@
 res://scenes/test.tscn
-res://scenes/UI.tscn
-res://scripts/help.gd
-res://scripts/global.gd
-res://scenes/game_over.tscn
-res://scripts/gg.gd
-res://scripts/finalscore.gd
-res://scripts/highscore.gd
