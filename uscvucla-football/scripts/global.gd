@@ -6,3 +6,5 @@ var attempts = 3
 var hasBall = true
 var exitedReceivers = 0
 var musicProgress = 0
+var firstThrow = true
+var highscore = 0

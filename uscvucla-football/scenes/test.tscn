@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c04dju357r4ch"]
+[gd_scene load_steps=43 format=3 uid="uid://c04dju357r4ch"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_orlxx"]
 [ext_resource type="Texture2D" uid="uid://ddjkw5tfrtluy" path="res://assets/sprites/BACKDROP (1).png" id="2_dlk4w"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://rkbisok3u8wq" path="res://assets/sprites/scoreboard/lives_1.png" id="21_xydg0"]
 [ext_resource type="Texture2D" uid="uid://dgoi6utlg1r21" path="res://assets/sprites/scoreboard/lives_2.png" id="22_m4jm7"]
 [ext_resource type="Texture2D" uid="uid://d1iyoanws3i0x" path="res://assets/sprites/scoreboard/lives_3.png" id="23_35wwj"]
+[ext_resource type="Script" path="res://scripts/help.gd" id="24_jman8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj8n8"]
 size = Vector2(1224, 172)
@@ -192,6 +193,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_3swws"]
+font_size = 72
+font_color = Color(0.544307, 0.160464, 0, 1)
+
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_orlxx")
 
@@ -296,8 +301,19 @@ scale = Vector2(0.947562, 0.998097)
 sprite_frames = SubResource("SpriteFrames_44vpv")
 animation = &"life_3"
 
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 27.0
+offset_top = 653.0
+offset_right = 1107.0
+offset_bottom = 752.0
+text = "Hold Space to wind up a throw!"
+label_settings = SubResource("LabelSettings_3swws")
+script = ExtResource("24_jman8")
+
 [connection signal="enemy_spawned" from="." to="." method="_on_enemy_spawned"]
 [connection signal="start_throw" from="Player" to="Throw_Arrow" method="_on_player_start_throw"]
+[connection signal="start_throw" from="Player" to="Label" method="_on_player_start_throw"]
 [connection signal="throw_ball" from="Player" to="Football" method="_on_player_throw_ball"]
 [connection signal="throw_ball" from="Player" to="Throw_Arrow" method="_on_player_throw_ball"]
 [connection signal="lose" from="Football" to="Scoreboard/ScoreManager" method="_on_football_lose"]
