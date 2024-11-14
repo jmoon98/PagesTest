@@ -17,6 +17,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #TODO: enemies might need to move faster to counter long-charging the ball
 func _process(delta: float) -> void: 
+	
 	position.x += direction.x * speed * delta
 	position.y += direction.y * speed * delta
 

@@ -10,6 +10,8 @@ func _ready():
 	visible = false
 
 func _physics_process(delta: float) -> void:
+	if get_parent():
+		get_parent().move_child(self, get_parent().get_child_count()-1)
 	if not thrown:
 		rotation = (get_global_mouse_position()-$"../Player".position).angle()
 	position.x += cos(rotation) * ball_speed * delta

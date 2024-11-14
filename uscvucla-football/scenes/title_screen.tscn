@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c05ae0u3pqhyw"]
+
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_blr32"]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_blr32")

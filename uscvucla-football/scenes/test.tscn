@@ -209,9 +209,6 @@ texture = ExtResource("2_dlk4w")
 position = Vector2(-233, 323)
 scale = Vector2(4, 4)
 
-[node name="Football" parent="." instance=ExtResource("3_bwlbk")]
-position = Vector2(-165, 319)
-
 [node name="Throw_Arrow" parent="." instance=ExtResource("4_cb74x")]
 position = Vector2(-146, 320)
 
@@ -233,6 +230,9 @@ shape = SubResource("RectangleShape2D_fj8n8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(567, 869)
 shape = SubResource("RectangleShape2D_fj8n8")
+
+[node name="Football" parent="." instance=ExtResource("3_bwlbk")]
+position = Vector2(-165, 319)
 
 [node name="Ui" parent="." instance=ExtResource("6_1m6by")]
 
@@ -302,7 +302,6 @@ sprite_frames = SubResource("SpriteFrames_44vpv")
 animation = &"life_3"
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = 27.0
 offset_top = 653.0
 offset_right = 1107.0
@@ -316,5 +315,5 @@ script = ExtResource("24_jman8")
 [connection signal="start_throw" from="Player" to="Label" method="_on_player_start_throw"]
 [connection signal="throw_ball" from="Player" to="Football" method="_on_player_throw_ball"]
 [connection signal="throw_ball" from="Player" to="Throw_Arrow" method="_on_player_throw_ball"]
-[connection signal="lose" from="Football" to="Scoreboard/ScoreManager" method="_on_football_lose"]
 [connection signal="timeout" from="Enemy_Timer" to="." method="_on_enemy_timer_timeout"]
+[connection signal="lose" from="Football" to="Scoreboard/ScoreManager" method="_on_football_lose"]

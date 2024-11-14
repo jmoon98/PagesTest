@@ -8,7 +8,7 @@ signal start_throw
 
 
 func _ready():
-	$AnimatedSprite2D.play("idle")
+	$AnimatedSprite2D.play("idle_ball")
 	Global.hasBall = true
 	# for football visually flying over linemen
 	# get_parent().move_child($"../Football", 0)
@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 		start_throw.emit()
 		throw_charge += (600*delta)
 	
-	if Input.is_action_just_released("throw"):
+	if Input.is_action_just_released("throw") and not thrown:
 		$AnimatedSprite2D.play("throw")
 		var throw_dir: Vector2 = (get_global_mouse_position()-position).normalized()
 		throw_ball.emit(throw_charge, throw_dir)
