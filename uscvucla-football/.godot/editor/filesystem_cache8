@@ -1,11 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1731562022
+::res://::1731573465
 export_presets.cfg::TextFile::-1::1731562004::0::1::::<><>::
 icon.svg::CompressedTexture2D::2564471355454913040::1731562004::1731562022::1::::<><>::
 ::res://assets/::1731562004
 ::res://assets/sounds/::1731562022
 Ludum Dare 30 04.ogg::AudioStreamOggVorbis::1660661231430478395::1731562004::1731562022::1::::<><>::
-::res://assets/sprites/::1731562038
+::res://assets/sprites/::1731574410
 arrow1.png::CompressedTexture2D::3012074173019883408::1731562004::1731562022::1::::<><>::
 arrow2.png::CompressedTexture2D::9053462258262312530::1731562004::1731562022::1::::<><>::
 BACKDROP (1).png::CompressedTexture2D::7389056044475953908::1731562004::1731562022::1::::<><>::
@@ -34,34 +34,39 @@ lives_1.png::CompressedTexture2D::1213930090271314976::1731562004::1731562022::1
 lives_2.png::CompressedTexture2D::7609838577344654788::1731562004::1731562022::1::::<><>::
 lives_3.png::CompressedTexture2D::9002169237748888457::1731562004::1731562022::1::::<><>::
 SCOREBOARD.png::CompressedTexture2D::4727174423854349763::1731562004::1731562022::1::::<><>::
+::res://assets/sprites/tutorial/::1731574421
+spacebar.png::CompressedTexture2D::2855733042660125237::1731574421::1731574421::1::::<><>::
+tutorial_board.png::CompressedTexture2D::2102545481093957746::1731574415::1731574415::1::::<><>::
 ::res://builds/::1731562004
 ::res://footage/::1731562004
-::res://scenes/::1731562004
-enemy.tscn::PackedScene::792254406074343302::1731562004::0::1::::<><>::uid://bir7mnihptcc5::::res://assets/sprites/ucla_running.png<>res://scripts/enemy.gd
+::res://scenes/::1731573638
+enemy.tscn::PackedScene::792254406074343302::1731573638::0::1::::<><>::uid://bir7mnihptcc5::::res://assets/sprites/ucla_running.png<>res://scripts/enemy.gd
 football.tscn::PackedScene::7196192739198668892::1731562004::0::1::::<><>::res://scripts/football.gd<>uid://dhdijlhge3mte::::res://assets/sprites/football.png
-game_over.tscn::PackedScene::5624459530916794164::1731562004::0::1::::<><>::res://scripts/finalscore.gd<>res://scripts/gg.gd<>res://scripts/highscore.gd
-player.tscn::PackedScene::6421372797736857401::1731562004::0::1::::<><>::res://scripts/player.gd<>uid://dhdynsipknc76::::res://assets/sprites/player_spritesheet.png
+game_over.tscn::PackedScene::5624459530916794164::1731573638::0::1::::<><>::res://scripts/finalscore.gd<>res://scripts/gg.gd<>res://scripts/highscore.gd
+player.tscn::PackedScene::6421372797736857401::1731573638::0::1::::<><>::res://scripts/player.gd<>uid://dhdynsipknc76::::res://assets/sprites/player_spritesheet.png<>uid://7ec8gass3bf4::::res://assets/sprites/player_spritesheet_ball.png
 receiver.tscn::PackedScene::6180175321414847968::1731562004::0::1::::<><>::res://scripts/receiver.gd<>uid://c5lfpip5u3nyj::::res://assets/sprites/usc_running.png
 score_manager.gd::GDScript::-1::1731562004::0::1::::<>Node2D<>::
-test.tscn::PackedScene::6587628731456242439::1731562004::0::1::::<><>::res://scripts/test.gd<>uid://ddjkw5tfrtluy::::res://assets/sprites/BACKDROP (1).png<>uid://cxqtcpag3hu6t::::res://scenes/player.tscn<>uid://dar5ii7mai42s::::res://scenes/football.tscn<>uid://biwxr5p2r81vh::::res://scenes/throw_arrow.tscn<>uid://bwdbhfqjsh7ac::::res://scenes/UI.tscn<>uid://xwo33eerweop::::res://assets/sounds/Ludum Dare 30 04.ogg<>uid://cmesa55u1b8pk::::res://scenes/game_over.tscn<>uid://b8l44wfqy72ax::::res://assets/sprites/scoreboard/SCOREBOARD.png<>uid://dlv4m0m3rrq40::::res://assets/sprites/scoreboard/0.png<>uid://c17tkj0fb8f8c::::res://assets/sprites/scoreboard/1.png<>uid://wneqg6u47y34::::res://assets/sprites/scoreboard/2.png<>uid://crfnyukabvg8s::::res://assets/sprites/scoreboard/3.png<>uid://dqhcyuk6ensii::::res://assets/sprites/scoreboard/4.png<>uid://cicdvkobky5rm::::res://assets/sprites/scoreboard/5.png<>uid://dx72agihykal6::::res://assets/sprites/scoreboard/6.png<>uid://duv3mci6fh6l8::::res://assets/sprites/scoreboard/7.png<>uid://dlwsao77ihj0k::::res://assets/sprites/scoreboard/8.png<>uid://c8je4dgv7b6h1::::res://assets/sprites/scoreboard/9.png<>res://scenes/score_manager.gd<>uid://rkbisok3u8wq::::res://assets/sprites/scoreboard/lives_1.png<>uid://dgoi6utlg1r21::::res://assets/sprites/scoreboard/lives_2.png<>uid://d1iyoanws3i0x::::res://assets/sprites/scoreboard/lives_3.png<>res://scripts/help.gd
+test.tscn::PackedScene::6587628731456242439::1731573638::0::1::::<><>::res://scripts/test.gd<>uid://ddjkw5tfrtluy::::res://assets/sprites/BACKDROP (1).png<>uid://cxqtcpag3hu6t::::res://scenes/player.tscn<>uid://dar5ii7mai42s::::res://scenes/football.tscn<>uid://biwxr5p2r81vh::::res://scenes/throw_arrow.tscn<>uid://bwdbhfqjsh7ac::::res://scenes/UI.tscn<>uid://xwo33eerweop::::res://assets/sounds/Ludum Dare 30 04.ogg<>uid://cmesa55u1b8pk::::res://scenes/game_over.tscn<>uid://b8l44wfqy72ax::::res://assets/sprites/scoreboard/SCOREBOARD.png<>uid://dlv4m0m3rrq40::::res://assets/sprites/scoreboard/0.png<>uid://c17tkj0fb8f8c::::res://assets/sprites/scoreboard/1.png<>uid://wneqg6u47y34::::res://assets/sprites/scoreboard/2.png<>uid://crfnyukabvg8s::::res://assets/sprites/scoreboard/3.png<>uid://dqhcyuk6ensii::::res://assets/sprites/scoreboard/4.png<>uid://cicdvkobky5rm::::res://assets/sprites/scoreboard/5.png<>uid://dx72agihykal6::::res://assets/sprites/scoreboard/6.png<>uid://duv3mci6fh6l8::::res://assets/sprites/scoreboard/7.png<>uid://dlwsao77ihj0k::::res://assets/sprites/scoreboard/8.png<>uid://c8je4dgv7b6h1::::res://assets/sprites/scoreboard/9.png<>res://scenes/score_manager.gd<>uid://rkbisok3u8wq::::res://assets/sprites/scoreboard/lives_1.png<>uid://dgoi6utlg1r21::::res://assets/sprites/scoreboard/lives_2.png<>uid://d1iyoanws3i0x::::res://assets/sprites/scoreboard/lives_3.png<>res://scripts/help.gd
 throw_arrow.tscn::PackedScene::2994776192840059633::1731562004::0::1::::<><>::res://scripts/throw_arrow.gd<>uid://d18tg278ppdjm::::res://assets/sprites/arrow2.png
-ucla_linemen.tscn::PackedScene::6826000791842489544::1731562004::0::1::::<><>::uid://cmj4v5xrs5g50::::res://assets/sprites/ucla_linemen.png<>res://scripts/ucla_linemen.gd
-UI.tscn::PackedScene::3936841882308999930::1731562004::0::1::::<><>::res://scripts/score.gd<>res://scripts/countdown.gd<>res://scripts/attempts.gd
+title_screen.tscn::PackedScene::6589502279407141202::1731573638::0::1::::<><>::res://scripts/title_screen.gd
+ucla_linemen.tscn::PackedScene::6826000791842489544::1731573638::0::1::::<><>::uid://cmj4v5xrs5g50::::res://assets/sprites/ucla_linemen.png<>res://scripts/ucla_linemen.gd
+UI.tscn::PackedScene::3936841882308999930::1731573638::0::1::::<><>::res://scripts/score.gd<>res://scripts/countdown.gd<>res://scripts/attempts.gd
 usc_linemen.tscn::PackedScene::4590271196276949897::1731562004::0::1::::<><>::res://scripts/usc_linemen.gd<>uid://bb03y3mdvd5nt::::res://assets/sprites/linemen.png
-::res://scripts/::1731562004
+::res://scripts/::1731564794
 attempts.gd::GDScript::-1::1731562004::0::1::::<>Label<>::
 countdown.gd::GDScript::-1::1731562004::0::1::::<>Label<>::
-enemy.gd::GDScript::-1::1731562004::0::1::::<>Area2D<>::
+enemy.gd::GDScript::-1::1731564794::0::1::::<>Area2D<>::
 finalscore.gd::GDScript::-1::1731562004::0::1::::<>Label<>::
-football.gd::GDScript::-1::1731562004::0::1::::<>Area2D<>::
+football.gd::GDScript::-1::1731564316::0::1::::<>Area2D<>::
 gg.gd::GDScript::-1::1731562004::0::1::::<>Node<>::
 global.gd::GDScript::-1::1731562004::0::1::::<>Node<>::
 help.gd::GDScript::-1::1731562004::0::1::::<>Node<>::
 highscore.gd::GDScript::-1::1731562004::0::1::::<>Label<>::
-player.gd::GDScript::-1::1731562004::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1731564360::0::1::::<>CharacterBody2D<>::
 receiver.gd::GDScript::-1::1731562004::0::1::::<>CharacterBody2D<>::
 score.gd::GDScript::-1::1731562004::0::1::::<>Label<>::
-test.gd::GDScript::-1::1731562004::0::1::::<>Node2D<>::
+test.gd::GDScript::-1::1731564170::0::1::::<>Node2D<>::
 throw_arrow.gd::GDScript::-1::1731562004::0::1::::<>CharacterBody2D<>::
+title_screen.gd::GDScript::-1::1731562998::0::1::::<>Node2D<>::
 ucla_linemen.gd::GDScript::-1::1731562004::0::1::::<>Node2D<>::
 usc_linemen.gd::GDScript::-1::1731562004::0::1::::<>Node2D<>::

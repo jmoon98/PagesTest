@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c04dju357r4ch"]
+[gd_scene load_steps=62 format=3 uid="uid://c04dju357r4ch"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_orlxx"]
 [ext_resource type="Texture2D" uid="uid://ddjkw5tfrtluy" path="res://assets/sprites/BACKDROP (1).png" id="2_dlk4w"]
@@ -24,6 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://dgoi6utlg1r21" path="res://assets/sprites/scoreboard/lives_2.png" id="22_m4jm7"]
 [ext_resource type="Texture2D" uid="uid://d1iyoanws3i0x" path="res://assets/sprites/scoreboard/lives_3.png" id="23_35wwj"]
 [ext_resource type="Script" path="res://scripts/help.gd" id="24_jman8"]
+[ext_resource type="Texture2D" uid="uid://47qu8efqkryo" path="res://assets/sprites/tutorial/tutorial_board.png" id="25_xs41l"]
+[ext_resource type="Texture2D" uid="uid://bgxlrg6hxu3xh" path="res://assets/sprites/tutorial/spacebar.png" id="26_jqriy"]
+[ext_resource type="Texture2D" uid="uid://c5lfpip5u3nyj" path="res://assets/sprites/usc_running.png" id="27_r5r7o"]
+[ext_resource type="Texture2D" uid="uid://d18tg278ppdjm" path="res://assets/sprites/arrow2.png" id="28_roq0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj8n8"]
 size = Vector2(1224, 172)
@@ -193,9 +197,120 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_3swws"]
-font_size = 72
-font_color = Color(0.544307, 0.160464, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_11sj8"]
+atlas = ExtResource("26_jqriy")
+region = Rect2(0, 0, 100, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk1r2"]
+atlas = ExtResource("26_jqriy")
+region = Rect2(100, 0, 100, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm5h7"]
+atlas = ExtResource("26_jqriy")
+region = Rect2(200, 0, 100, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78k1g"]
+atlas = ExtResource("26_jqriy")
+region = Rect2(300, 0, 100, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5ysq"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11sj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk1r2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm5h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78k1g")
+}],
+"loop": true,
+"name": &"spacebar",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yocup"]
+atlas = ExtResource("27_r5r7o")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hupdy"]
+atlas = ExtResource("27_r5r7o")
+region = Rect2(30, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq5yx"]
+atlas = ExtResource("27_r5r7o")
+region = Rect2(60, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q267r"]
+atlas = ExtResource("27_r5r7o")
+region = Rect2(90, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiw84"]
+atlas = ExtResource("27_r5r7o")
+region = Rect2(120, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjmdg"]
+atlas = ExtResource("27_r5r7o")
+region = Rect2(150, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioj2j"]
+atlas = ExtResource("27_r5r7o")
+region = Rect2(180, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n64pj"]
+atlas = ExtResource("27_r5r7o")
+region = Rect2(210, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbt64"]
+atlas = ExtResource("27_r5r7o")
+region = Rect2(240, 0, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8d5i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yocup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hupdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq5yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q267r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiw84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjmdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioj2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n64pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbt64")
+}],
+"loop": true,
+"name": &"tutorial_receiver",
+"speed": 10.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f6qlm"]
+font_size = 30
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_orlxx")
@@ -301,19 +416,67 @@ scale = Vector2(0.947562, 0.998097)
 sprite_frames = SubResource("SpriteFrames_44vpv")
 animation = &"life_3"
 
-[node name="Label" type="Label" parent="."]
-offset_left = 27.0
-offset_top = 653.0
-offset_right = 1107.0
-offset_bottom = 752.0
-text = "Hold Space to wind up a throw!"
-label_settings = SubResource("LabelSettings_3swws")
+[node name="Label" type="Node2D" parent="."]
 script = ExtResource("24_jman8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Label"]
+position = Vector2(-139, -136)
+scale = Vector2(2.91333, 2.48)
+texture = ExtResource("25_xs41l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Label"]
+position = Vector2(39, -242)
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_s5ysq")
+animation = &"spacebar"
+frame_progress = 0.601637
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Label"]
+position = Vector2(39, -28)
+scale = Vector2(3.35, 3.61667)
+sprite_frames = SubResource("SpriteFrames_c8d5i")
+animation = &"tutorial_receiver"
+frame_progress = 0.015985
+
+[node name="Sprite2D2" type="Sprite2D" parent="Label"]
+position = Vector2(42, -134)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("28_roq0o")
+
+[node name="Label" type="Label" parent="Label"]
+offset_left = -502.0
+offset_top = -289.0
+offset_right = -63.0
+offset_bottom = -183.0
+text = "Press and hold spacebar to charge a throw..."
+label_settings = SubResource("LabelSettings_f6qlm")
+autowrap_mode = 2
+uppercase = true
+
+[node name="Label2" type="Label" parent="Label"]
+offset_left = -503.0
+offset_top = -161.0
+offset_right = -64.0
+offset_bottom = -98.0
+text = "aim with your mouse..."
+label_settings = SubResource("LabelSettings_f6qlm")
+autowrap_mode = 2
+uppercase = true
+
+[node name="Label3" type="Label" parent="Label"]
+offset_left = -503.0
+offset_top = -54.0
+offset_right = -64.0
+offset_bottom = 9.0
+text = "and pass to a receiver!"
+label_settings = SubResource("LabelSettings_f6qlm")
+autowrap_mode = 2
+uppercase = true
 
 [connection signal="enemy_spawned" from="." to="." method="_on_enemy_spawned"]
 [connection signal="start_throw" from="Player" to="Throw_Arrow" method="_on_player_start_throw"]
 [connection signal="start_throw" from="Player" to="Label" method="_on_player_start_throw"]
-[connection signal="throw_ball" from="Player" to="Football" method="_on_player_throw_ball"]
 [connection signal="throw_ball" from="Player" to="Throw_Arrow" method="_on_player_throw_ball"]
+[connection signal="throw_ball" from="Player" to="Football" method="_on_player_throw_ball"]
 [connection signal="timeout" from="Enemy_Timer" to="." method="_on_enemy_timer_timeout"]
 [connection signal="lose" from="Football" to="Scoreboard/ScoreManager" method="_on_football_lose"]
