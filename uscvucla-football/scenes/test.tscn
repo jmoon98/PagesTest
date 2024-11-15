@@ -417,6 +417,7 @@ sprite_frames = SubResource("SpriteFrames_44vpv")
 animation = &"life_3"
 
 [node name="Label" type="Node2D" parent="."]
+visible = false
 script = ExtResource("24_jman8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Label"]

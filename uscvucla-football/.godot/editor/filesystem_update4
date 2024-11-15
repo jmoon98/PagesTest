@@ -5,4 +5,3 @@ res://scenes/player.tscn
 res://scenes/title_screen.tscn
 res://scenes/ucla_linemen.tscn
 res://scenes/enemy.tscn
-res://scripts/help.gd
