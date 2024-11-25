@@ -87,12 +87,12 @@ label_settings = SubResource("LabelSettings_rfqsb")
 horizontal_alignment = 1
 
 [node name="Credits" type="Label" parent="."]
-offset_left = 285.0
+offset_left = 233.0
 offset_top = 566.0
-offset_right = 883.0
+offset_right = 934.0
 offset_bottom = 803.0
 text = "Credits:
-Developed by Annenberg Games Team
+Developed by Annenberg Media Games Team
 	Jon Moon
 	Steven Xie
 Music by Tallbeard Studios"
