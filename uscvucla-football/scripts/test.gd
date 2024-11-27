@@ -44,7 +44,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	Global.musicProgress += delta
+	if Global.musicProgress > 59.5:
+		Global.musicProgress = 0.0
+	else:
+		Global.musicProgress += delta
 
 
 func _on_enemy_timer_timeout() -> void:
