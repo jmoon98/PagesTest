@@ -44,7 +44,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	Global.musicProgress = $AudioStreamPlayer2D.get_playback_position()   
+	Global.musicProgress += delta
 
 
 func _on_enemy_timer_timeout() -> void:
