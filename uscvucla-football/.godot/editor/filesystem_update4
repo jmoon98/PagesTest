@@ -1,4 +1,3 @@
-res://scripts/test.gd
 res://scenes/test.tscn
 res://scenes/UI.tscn
 res://scenes/game_over.tscn
@@ -7,10 +6,5 @@ res://scenes/title_screen.tscn
 res://scenes/ucla_linemen.tscn
 res://scenes/enemy.tscn
 res://scenes/receiver.tscn
-res://scripts/football.gd
-res://scenes/top.gd
-res://scenes/left.gd
-res://scenes/bottom.gd
-res://scenes/game_boundaries.gd
-res://scenes/right.gd
-res://scripts/receiver.gd
+res://scripts/test.gd
+res://scenes/enemy_timer.gd

@@ -1,10 +1,11 @@
-[gd_scene load_steps=69 format=3 uid="uid://c04dju357r4ch"]
+[gd_scene load_steps=70 format=3 uid="uid://c04dju357r4ch"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_orlxx"]
 [ext_resource type="Texture2D" uid="uid://ddjkw5tfrtluy" path="res://assets/sprites/BACKDROP (1).png" id="2_dlk4w"]
 [ext_resource type="PackedScene" uid="uid://cxqtcpag3hu6t" path="res://scenes/player.tscn" id="2_dx1fj"]
 [ext_resource type="PackedScene" uid="uid://dar5ii7mai42s" path="res://scenes/football.tscn" id="3_bwlbk"]
 [ext_resource type="PackedScene" uid="uid://biwxr5p2r81vh" path="res://scenes/throw_arrow.tscn" id="4_cb74x"]
+[ext_resource type="Script" path="res://scenes/enemy_timer.gd" id="5_a5trn"]
 [ext_resource type="PackedScene" uid="uid://bwdbhfqjsh7ac" path="res://scenes/UI.tscn" id="6_1m6by"]
 [ext_resource type="AudioStream" uid="uid://xwo33eerweop" path="res://assets/sounds/Ludum Dare 30 04.ogg" id="7_xqjtu"]
 [ext_resource type="PackedScene" uid="uid://cmesa55u1b8pk" path="res://scenes/game_over.tscn" id="8_i55yk"]
@@ -348,6 +349,7 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="Enemy_Timer" type="Timer" parent="."]
 one_shot = true
+script = ExtResource("5_a5trn")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -432,7 +434,6 @@ sprite_frames = SubResource("SpriteFrames_44vpv")
 animation = &"life_3"
 
 [node name="Label" type="Node2D" parent="."]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Label"]
 position = Vector2(-139, -136)
@@ -440,21 +441,20 @@ scale = Vector2(2.91333, 2.48)
 texture = ExtResource("25_xs41l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Label"]
-position = Vector2(39, -242)
+position = Vector2(133, -254)
 scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_s5ysq")
 animation = &"spacebar"
-frame_progress = 0.601637
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Label"]
-position = Vector2(39, -28)
+position = Vector2(133, -40)
 scale = Vector2(3.35, 3.61667)
 sprite_frames = SubResource("SpriteFrames_c8d5i")
 animation = &"tutorial_receiver"
 frame_progress = 0.015985
 
 [node name="Sprite2D2" type="Sprite2D" parent="Label"]
-position = Vector2(42, -134)
+position = Vector2(136, -146)
 scale = Vector2(1.32, 1.32)
 texture = ExtResource("28_roq0o")
 
@@ -481,9 +481,9 @@ uppercase = true
 [node name="Label3" type="Label" parent="Label"]
 offset_left = -503.0
 offset_top = -54.0
-offset_right = -64.0
+offset_right = 7.0
 offset_bottom = 9.0
-text = "and pass to a receiver!"
+text = "release and pass to a receiver!"
 label_settings = SubResource("LabelSettings_f6qlm")
 autowrap_mode = 2
 uppercase = true
