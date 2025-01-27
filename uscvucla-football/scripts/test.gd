@@ -52,11 +52,12 @@ func _process(delta: float) -> void:
 
 func _on_enemy_timer_timeout() -> void:
 	# same thing here; i'm going to clean these up in a separate function
-	print("Enemy team start rush")
-	var enemy1 = enemy.instantiate()
-	var enemy2 = enemy.instantiate()
-	setup_enemies(enemy1)
-	setup_enemies(enemy2)
+	if Global.hasBall:
+		print("Enemy team start rush")
+		var enemy1 = enemy.instantiate()
+		var enemy2 = enemy.instantiate()
+		setup_enemies(enemy1)
+		setup_enemies(enemy2)
 
 # ===== FUNCTIONS TO INITIALLY SETUP ENEMIES AND LINEMEN =====
 func setup_usc_linemen(lineman) -> void:

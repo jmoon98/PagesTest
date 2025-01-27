@@ -23,6 +23,17 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	random_run()
 	
+	if position.x > 1700:
+		Global.exitedReceivers -= 1
+		print("Receiver exited")
+		if Global.exitedReceivers == 0:
+			Global.attempts -= 1
+			print("EMITTING LOSE SIGNAL")
+			lose.emit() #lose round signal
+			if Global.attempts > 0:
+				print("You lose!")
+				get_tree().reload_current_scene()
+	
 func receive_ball() -> void:
 	# will likely change the sprite to the version carrying ball.
 	# i'll make and add them soon! 
@@ -44,6 +55,7 @@ func _on_direction_timer_timeout() -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	'''
 	Global.exitedReceivers -= 1
 	print("Receiver exited")
 	if Global.exitedReceivers == 0:
@@ -52,5 +64,5 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 		if Global.attempts > 0:
 			print("You lose!")
 			get_tree().reload_current_scene()
-		else:
-			pass
+		els:
+			pass'''
