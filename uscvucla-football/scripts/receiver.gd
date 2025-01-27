@@ -33,6 +33,8 @@ func _process(delta: float) -> void:
 			if Global.attempts > 0:
 				print("You lose!")
 				get_tree().reload_current_scene()
+			else:
+				queue_free()
 	
 func receive_ball() -> void:
 	# will likely change the sprite to the version carrying ball.

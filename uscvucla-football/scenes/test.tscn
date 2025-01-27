@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://d18tg278ppdjm" path="res://assets/sprites/arrow2.png" id="28_roq0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj8n8"]
-size = Vector2(1224, 172)
+size = Vector2(1827, 197)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cupe"]
 atlas = ExtResource("10_jpmuu")
@@ -337,13 +337,13 @@ one_shot = true
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(575, -112)
+position = Vector2(872, -377)
 shape = SubResource("RectangleShape2D_fj8n8")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(567, 869)
+position = Vector2(860.5, 1073.5)
 shape = SubResource("RectangleShape2D_fj8n8")
 
 [node name="Football" parent="." instance=ExtResource("3_bwlbk")]
