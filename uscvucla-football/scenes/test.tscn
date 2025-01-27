@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://c04dju357r4ch"]
+[gd_scene load_steps=69 format=3 uid="uid://c04dju357r4ch"]
 
 [ext_resource type="Script" path="res://scripts/test.gd" id="1_orlxx"]
 [ext_resource type="Texture2D" uid="uid://ddjkw5tfrtluy" path="res://assets/sprites/BACKDROP (1).png" id="2_dlk4w"]
@@ -23,14 +23,17 @@
 [ext_resource type="Texture2D" uid="uid://rkbisok3u8wq" path="res://assets/sprites/scoreboard/lives_1.png" id="21_xydg0"]
 [ext_resource type="Texture2D" uid="uid://dgoi6utlg1r21" path="res://assets/sprites/scoreboard/lives_2.png" id="22_m4jm7"]
 [ext_resource type="Texture2D" uid="uid://d1iyoanws3i0x" path="res://assets/sprites/scoreboard/lives_3.png" id="23_35wwj"]
-[ext_resource type="Script" path="res://scripts/help.gd" id="24_jman8"]
 [ext_resource type="Texture2D" uid="uid://47qu8efqkryo" path="res://assets/sprites/tutorial/tutorial_board.png" id="25_xs41l"]
 [ext_resource type="Texture2D" uid="uid://bgxlrg6hxu3xh" path="res://assets/sprites/tutorial/spacebar.png" id="26_jqriy"]
 [ext_resource type="Texture2D" uid="uid://c5lfpip5u3nyj" path="res://assets/sprites/usc_running.png" id="27_r5r7o"]
 [ext_resource type="Texture2D" uid="uid://d18tg278ppdjm" path="res://assets/sprites/arrow2.png" id="28_roq0o"]
+[ext_resource type="Script" path="res://scenes/top.gd" id="29_kymon"]
+[ext_resource type="Script" path="res://scenes/left.gd" id="30_cn45g"]
+[ext_resource type="Script" path="res://scenes/bottom.gd" id="30_dkebd"]
+[ext_resource type="Script" path="res://scenes/right.gd" id="31_plg8y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj8n8"]
-size = Vector2(1827, 197)
+size = Vector2(1746.75, 158.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cupe"]
 atlas = ExtResource("10_jpmuu")
@@ -312,6 +315,18 @@ animations = [{
 [sub_resource type="LabelSettings" id="LabelSettings_f6qlm"]
 font_size = 30
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ms0h"]
+size = Vector2(2687.5, 276)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fhv2"]
+size = Vector2(2628, 264.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2235i"]
+size = Vector2(435.5, 1548.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcwbb"]
+size = Vector2(314, 1548)
+
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_orlxx")
 
@@ -337,13 +352,13 @@ one_shot = true
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(872, -377)
+position = Vector2(847.625, -340.375)
 shape = SubResource("RectangleShape2D_fj8n8")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(860.5, 1073.5)
+position = Vector2(831.25, 1058)
 shape = SubResource("RectangleShape2D_fj8n8")
 
 [node name="Football" parent="." instance=ExtResource("3_bwlbk")]
@@ -418,7 +433,6 @@ animation = &"life_3"
 
 [node name="Label" type="Node2D" parent="."]
 visible = false
-script = ExtResource("24_jman8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Label"]
 position = Vector2(-139, -136)
@@ -474,6 +488,36 @@ label_settings = SubResource("LabelSettings_f6qlm")
 autowrap_mode = 2
 uppercase = true
 
+[node name="GameBoundaries" type="Node2D" parent="."]
+
+[node name="top" type="Area2D" parent="GameBoundaries"]
+script = ExtResource("29_kymon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameBoundaries/top"]
+position = Vector2(615.25, -555)
+shape = SubResource("RectangleShape2D_7ms0h")
+
+[node name="bottom" type="Area2D" parent="GameBoundaries"]
+script = ExtResource("30_dkebd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameBoundaries/bottom"]
+position = Vector2(593, 1265.75)
+shape = SubResource("RectangleShape2D_0fhv2")
+
+[node name="left" type="Area2D" parent="GameBoundaries"]
+script = ExtResource("30_cn45g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameBoundaries/left"]
+position = Vector2(-811, 358.125)
+shape = SubResource("RectangleShape2D_2235i")
+
+[node name="right" type="Area2D" parent="GameBoundaries"]
+script = ExtResource("31_plg8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameBoundaries/right"]
+position = Vector2(1894, 358)
+shape = SubResource("RectangleShape2D_mcwbb")
+
 [connection signal="enemy_spawned" from="." to="." method="_on_enemy_spawned"]
 [connection signal="start_throw" from="Player" to="Throw_Arrow" method="_on_player_start_throw"]
 [connection signal="start_throw" from="Player" to="Label" method="_on_player_start_throw"]
@@ -481,3 +525,13 @@ uppercase = true
 [connection signal="throw_ball" from="Player" to="Football" method="_on_player_throw_ball"]
 [connection signal="timeout" from="Enemy_Timer" to="." method="_on_enemy_timer_timeout"]
 [connection signal="lose" from="Football" to="Scoreboard/ScoreManager" method="_on_football_lose"]
+[connection signal="area_entered" from="GameBoundaries/top" to="GameBoundaries/top" method="_on_area_entered"]
+[connection signal="body_entered" from="GameBoundaries/top" to="GameBoundaries/top" method="_on_body_entered"]
+[connection signal="football_entered_outofbounds" from="GameBoundaries/top" to="Football" method="_on_top_football_entered_outofbounds"]
+[connection signal="area_entered" from="GameBoundaries/bottom" to="GameBoundaries/bottom" method="_on_area_entered"]
+[connection signal="football_entered_outofbounds" from="GameBoundaries/bottom" to="Football" method="_on_bottom_football_entered_outofbounds"]
+[connection signal="area_entered" from="GameBoundaries/left" to="GameBoundaries/left" method="_on_area_entered"]
+[connection signal="football_entered_outofbounds" from="GameBoundaries/left" to="Football" method="_on_left_football_entered_outofbounds"]
+[connection signal="area_entered" from="GameBoundaries/right" to="GameBoundaries/right" method="_on_area_entered"]
+[connection signal="body_entered" from="GameBoundaries/right" to="GameBoundaries/right" method="_on_body_entered"]
+[connection signal="football_entered_outofbounds" from="GameBoundaries/right" to="Football" method="_on_right_football_entered_outofbounds"]

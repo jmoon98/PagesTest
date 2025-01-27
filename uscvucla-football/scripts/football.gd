@@ -16,13 +16,14 @@ func _physics_process(delta: float) -> void:
 		rotation = (get_global_mouse_position()-$"../Player".position).angle()
 	position.x += cos(rotation) * ball_speed * delta
 	position.y += sin(rotation) * ball_speed * delta
+	'''
 	if position.x < -600 or position.x > 1700 or position.y < -570 or position.y > 1020:
 		# print("Ball exited")
 		Global.attempts -= 1
 		lose.emit() #lose round signal
 		if Global.attempts > 0:
 			# print("You lose!")
-			get_tree().reload_current_scene()
+			get_tree().reload_current_scene()'''
 
 func _on_player_throw_ball(throw_charge, throw_dir) -> void:
 	if not thrown:
@@ -52,3 +53,45 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	else:
 		pass
 	'''
+
+
+func _on_top_football_entered_outofbounds() -> void:
+	print("hoohah")
+	Global.attempts -= 1
+	lose.emit() #lose round signal
+	if Global.attempts > 0:
+		print("You lose!")
+		get_tree().reload_current_scene()
+	else:
+		queue_free()
+
+func _on_bottom_football_entered_outofbounds() -> void:
+	print("hoohah")
+	Global.attempts -= 1
+	lose.emit() #lose round signal
+	if Global.attempts > 0:
+		print("You lose!")
+		get_tree().reload_current_scene()
+	else:
+		queue_free()
+
+func _on_left_football_entered_outofbounds() -> void:
+	print("hoohah")
+	Global.attempts -= 1
+	lose.emit() #lose round signal
+	if Global.attempts > 0:
+		print("You lose!")
+		get_tree().reload_current_scene()
+	else:
+		queue_free()
+		
+
+func _on_right_football_entered_outofbounds() -> void:
+	print("hoohah")
+	Global.attempts -= 1
+	lose.emit() #lose round signal
+	if Global.attempts > 0:
+		print("You lose!")
+		get_tree().reload_current_scene()
+	else:
+		queue_free()

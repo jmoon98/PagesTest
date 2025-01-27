@@ -87,5 +87,3 @@ func setup_enemies(enemy) -> void:
 	enemy_count += 1
 	add_child(enemy)
 	move_child(enemy, enemy_count+1)
-	
-	

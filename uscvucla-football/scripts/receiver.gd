@@ -24,17 +24,7 @@ func _process(delta: float) -> void:
 	random_run()
 	
 	if position.x > 1700:
-		Global.exitedReceivers -= 1
-		print("Receiver exited")
-		if Global.exitedReceivers == 0:
-			Global.attempts -= 1
-			print("EMITTING LOSE SIGNAL")
-			lose.emit() #lose round signal
-			if Global.attempts > 0:
-				print("You lose!")
-				get_tree().reload_current_scene()
-			else:
-				queue_free()
+		receivers_exit()
 	
 func receive_ball() -> void:
 	# will likely change the sprite to the version carrying ball.
@@ -55,6 +45,18 @@ func random_run() -> void:
 func _on_direction_timer_timeout() -> void:
 	new_dir = randi_range(-1, 1)
 
+func receivers_exit() -> void:
+	Global.exitedReceivers -= 1
+	print("Receiver exited")
+	if Global.exitedReceivers <= 0:
+		Global.attempts -= 1
+		print("EMITTING LOSE SIGNAL")
+		lose.emit() #lose round signal
+		if Global.attempts > 0:
+			print("You lose!")
+			get_tree().reload_current_scene()
+		else:
+			queue_free()
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	'''
