@@ -53,21 +53,6 @@ func _process(delta: float) -> void:
 		Global.musicProgress = 0.0
 	else:
 		Global.musicProgress += delta
-		
-	if Global.attempts == 3 and Global.firstThrow == true:
-		$Label.visible = true
-		$Label/AnimatedSprite2D.play("spacebar")
-		$Label/AnimatedSprite2D2.play("tutorial_receiver")
-		if tutorial_arrow_rot_clockwise:
-			$Label/Sprite2D2.rotation_degrees += tutorial_arrow_rot_speed * delta
-			if $Label/Sprite2D2.rotation_degrees >= tutorial_arrow_max_deg:
-				tutorial_arrow_rot_clockwise = false
-		else:
-			$Label/Sprite2D2.rotation_degrees -= tutorial_arrow_rot_speed * delta
-			if $Label/Sprite2D2.rotation_degrees <= -1 * tutorial_arrow_max_deg:
-				tutorial_arrow_rot_clockwise = true
-	else:
-		$Label.visible = false
 
 
 func _on_enemy_timer_timeout() -> void:
