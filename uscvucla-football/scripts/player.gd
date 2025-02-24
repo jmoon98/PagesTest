@@ -14,12 +14,12 @@ func _ready():
 	# get_parent().move_child($"../Football", 0)
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("throw") and not thrown and throw_charge < 1800:
+	if Input.is_action_pressed("throw") and not thrown and throw_charge < 1800 and Global.attempts > 0:
 		$AnimatedSprite2D.play("throw_ready")
 		start_throw.emit()
 		throw_charge += (600*delta)
 	
-	if Input.is_action_just_released("throw") and not thrown:
+	if Input.is_action_just_released("throw") and not thrown and Global.attempts > 0:
 		$AnimatedSprite2D.play("throw")
 		var throw_dir: Vector2 = (get_global_mouse_position()-position).normalized()
 		throw_ball.emit(throw_charge, throw_dir)
