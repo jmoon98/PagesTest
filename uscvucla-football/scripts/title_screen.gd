@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,3 +12,11 @@ func _process(delta: float) -> void:
 		var level_scene = preload("res://scenes/test.tscn").instantiate()
 		get_tree().root.add_child(level_scene)
 		queue_free()
+
+
+func _on_start_game_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/test.tscn")
+
+
+func _on_tutorial_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")

@@ -1,0 +1,228 @@
+[gd_scene load_steps=24 format=3 uid="uid://fuw1vl3le75f"]
+
+[ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_lviw1"]
+[ext_resource type="Texture2D" uid="uid://47qu8efqkryo" path="res://assets/sprites/tutorial/tutorial_board.png" id="1_vjsvx"]
+[ext_resource type="Texture2D" uid="uid://bgxlrg6hxu3xh" path="res://assets/sprites/tutorial/spacebar.png" id="2_cljyw"]
+[ext_resource type="Texture2D" uid="uid://c5lfpip5u3nyj" path="res://assets/sprites/usc_running.png" id="3_nbovt"]
+[ext_resource type="Texture2D" uid="uid://d18tg278ppdjm" path="res://assets/sprites/arrow2.png" id="4_61ooo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11sj8"]
+atlas = ExtResource("2_cljyw")
+region = Rect2(0, 0, 100, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk1r2"]
+atlas = ExtResource("2_cljyw")
+region = Rect2(100, 0, 100, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm5h7"]
+atlas = ExtResource("2_cljyw")
+region = Rect2(200, 0, 100, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78k1g"]
+atlas = ExtResource("2_cljyw")
+region = Rect2(300, 0, 100, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_enk4w"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11sj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk1r2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm5h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78k1g")
+}],
+"loop": true,
+"name": &"spacebar",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yocup"]
+atlas = ExtResource("3_nbovt")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hupdy"]
+atlas = ExtResource("3_nbovt")
+region = Rect2(30, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq5yx"]
+atlas = ExtResource("3_nbovt")
+region = Rect2(60, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q267r"]
+atlas = ExtResource("3_nbovt")
+region = Rect2(90, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiw84"]
+atlas = ExtResource("3_nbovt")
+region = Rect2(120, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjmdg"]
+atlas = ExtResource("3_nbovt")
+region = Rect2(150, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioj2j"]
+atlas = ExtResource("3_nbovt")
+region = Rect2(180, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n64pj"]
+atlas = ExtResource("3_nbovt")
+region = Rect2(210, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbt64"]
+atlas = ExtResource("3_nbovt")
+region = Rect2(240, 0, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_akg8l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yocup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hupdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq5yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q267r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiw84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjmdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioj2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n64pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbt64")
+}],
+"loop": true,
+"name": &"tutorial_receiver",
+"speed": 10.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qkelh"]
+font_size = 30
+
+[sub_resource type="Theme" id="Theme_07p2f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hlngo"]
+font_size = 36
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lviw1")
+
+[node name="Label" type="Node2D" parent="."]
+position = Vector2(726, 428)
+
+[node name="Sprite2D" type="Sprite2D" parent="Label"]
+position = Vector2(-139, -136)
+scale = Vector2(2.91333, 2.48)
+texture = ExtResource("1_vjsvx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Label"]
+position = Vector2(132, -243)
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_enk4w")
+animation = &"spacebar"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Label"]
+position = Vector2(133, -40)
+scale = Vector2(3.35, 3.61667)
+sprite_frames = SubResource("SpriteFrames_akg8l")
+animation = &"tutorial_receiver"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Label"]
+position = Vector2(133, -141)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("4_61ooo")
+
+[node name="Label" type="Label" parent="Label"]
+offset_left = -503.0
+offset_top = -278.0
+offset_right = -64.0
+offset_bottom = -172.0
+text = "Click and hold charge a throw..."
+label_settings = SubResource("LabelSettings_qkelh")
+autowrap_mode = 2
+uppercase = true
+
+[node name="Label2" type="Label" parent="Label"]
+offset_left = -503.0
+offset_top = -159.0
+offset_right = -64.0
+offset_bottom = -96.0
+text = "aim with your mouse..."
+label_settings = SubResource("LabelSettings_qkelh")
+autowrap_mode = 2
+uppercase = true
+
+[node name="Label3" type="Label" parent="Label"]
+offset_left = -503.0
+offset_top = -54.0
+offset_right = 7.0
+offset_bottom = 9.0
+text = "release and pass to a receiver!"
+label_settings = SubResource("LabelSettings_qkelh")
+autowrap_mode = 2
+uppercase = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BacktoMain" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 196.0
+offset_right = 150.0
+offset_bottom = 266.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_07p2f")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = 203.0
+offset_right = 59.5
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return"
+label_settings = SubResource("LabelSettings_hlngo")
+
+[connection signal="pressed" from="CanvasLayer/Control/BacktoMain" to="." method="_on_backto_main_pressed"]
