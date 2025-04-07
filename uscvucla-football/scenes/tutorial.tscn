@@ -1,28 +1,20 @@
-[gd_scene load_steps=24 format=3 uid="uid://fuw1vl3le75f"]
+[gd_scene load_steps=22 format=3 uid="uid://fuw1vl3le75f"]
 
 [ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_lviw1"]
 [ext_resource type="Texture2D" uid="uid://47qu8efqkryo" path="res://assets/sprites/tutorial/tutorial_board.png" id="1_vjsvx"]
-[ext_resource type="Texture2D" uid="uid://bgxlrg6hxu3xh" path="res://assets/sprites/tutorial/spacebar.png" id="2_cljyw"]
+[ext_resource type="Texture2D" uid="uid://cfe26wrqrf1fw" path="res://assets/sprites/tutorial/mouse-Sheet.png" id="3_jqqm4"]
 [ext_resource type="Texture2D" uid="uid://c5lfpip5u3nyj" path="res://assets/sprites/usc_running.png" id="3_nbovt"]
 [ext_resource type="Texture2D" uid="uid://d18tg278ppdjm" path="res://assets/sprites/arrow2.png" id="4_61ooo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_11sj8"]
-atlas = ExtResource("2_cljyw")
-region = Rect2(0, 0, 100, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4y4j"]
+atlas = ExtResource("3_jqqm4")
+region = Rect2(0, 0, 45, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bk1r2"]
-atlas = ExtResource("2_cljyw")
-region = Rect2(100, 0, 100, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3d5v"]
+atlas = ExtResource("3_jqqm4")
+region = Rect2(45, 0, 45, 45)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xm5h7"]
-atlas = ExtResource("2_cljyw")
-region = Rect2(200, 0, 100, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_78k1g"]
-atlas = ExtResource("2_cljyw")
-region = Rect2(300, 0, 100, 30)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_enk4w"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2nuxc"]
 animations = [{
 "frames": [],
 "loop": true,
@@ -31,20 +23,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_11sj8")
+"texture": SubResource("AtlasTexture_s4y4j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bk1r2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xm5h7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_78k1g")
+"texture": SubResource("AtlasTexture_f3d5v")
 }],
 "loop": true,
-"name": &"spacebar",
-"speed": 5.0
+"name": &"mouse_click",
+"speed": 2.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yocup"]
@@ -137,11 +123,12 @@ position = Vector2(-139, -136)
 scale = Vector2(2.91333, 2.48)
 texture = ExtResource("1_vjsvx")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Label"]
-position = Vector2(132, -243)
-scale = Vector2(1.6, 1.6)
-sprite_frames = SubResource("SpriteFrames_enk4w")
-animation = &"spacebar"
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Label"]
+position = Vector2(128, -235)
+scale = Vector2(1.61111, 1.61111)
+sprite_frames = SubResource("SpriteFrames_2nuxc")
+animation = &"mouse_click"
+frame_progress = 0.626152
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Label"]
 position = Vector2(133, -40)
@@ -157,19 +144,19 @@ texture = ExtResource("4_61ooo")
 [node name="Label" type="Label" parent="Label"]
 offset_left = -503.0
 offset_top = -278.0
-offset_right = -64.0
-offset_bottom = -172.0
-text = "Click and hold charge a throw..."
+offset_right = -24.0
+offset_bottom = -191.0
+text = "Click (touch on mobile) and hold charge a throw..."
 label_settings = SubResource("LabelSettings_qkelh")
 autowrap_mode = 2
 uppercase = true
 
 [node name="Label2" type="Label" parent="Label"]
 offset_left = -503.0
-offset_top = -159.0
+offset_top = -166.0
 offset_right = -64.0
-offset_bottom = -96.0
-text = "aim with your mouse..."
+offset_bottom = -79.0
+text = "aim with your mouse (finger on mobile)..."
 label_settings = SubResource("LabelSettings_qkelh")
 autowrap_mode = 2
 uppercase = true

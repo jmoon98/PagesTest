@@ -7,7 +7,7 @@ var tutorial_arrow_rot_clockwise = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Label/AnimatedSprite2D2.play("tutorial_receiver")
-	$Label/AnimatedSprite2D.play("spacebar")
+	$Label/AnimatedSprite2D3.play("mouse_click")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
