@@ -1,7 +1,7 @@
-extends Control
+extends Node2D
 
-@onready var runner1 = $AnimatedSprite2D
-@onready var runner2 = $AnimatedSprite2D2
+@onready var runner1 = $SubViewportContainer/SubViewport/AnimatedSprite2D
+@onready var runner2 = $SubViewportContainer/SubViewport/AnimatedSprite2D2
 var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.

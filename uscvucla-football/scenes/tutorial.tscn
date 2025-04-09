@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://c5lfpip5u3nyj" path="res://assets/sprites/usc_running.png" id="3_nbovt"]
 [ext_resource type="Texture2D" uid="uid://d18tg278ppdjm" path="res://assets/sprites/arrow2.png" id="4_61ooo"]
 
+[sub_resource type="Theme" id="Theme_07p2f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hlngo"]
+font_size = 36
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4y4j"]
 atlas = ExtResource("3_jqqm4")
 region = Rect2(0, 0, 45, 45)
@@ -107,109 +112,91 @@ animations = [{
 [sub_resource type="LabelSettings" id="LabelSettings_qkelh"]
 font_size = 30
 
-[sub_resource type="Theme" id="Theme_07p2f"]
+[node name="Control" type="Node2D"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_hlngo"]
-font_size = 36
-
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("1_lviw1")
 
-[node name="Label" type="Node2D" parent="."]
-position = Vector2(726, 428)
-
-[node name="Sprite2D" type="Sprite2D" parent="Label"]
-position = Vector2(-139, -136)
-scale = Vector2(2.91333, 2.48)
-texture = ExtResource("1_vjsvx")
-
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Label"]
-position = Vector2(128, -235)
-scale = Vector2(1.61111, 1.61111)
-sprite_frames = SubResource("SpriteFrames_2nuxc")
-animation = &"mouse_click"
-frame_progress = 0.626152
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Label"]
-position = Vector2(133, -40)
-scale = Vector2(3.35, 3.61667)
-sprite_frames = SubResource("SpriteFrames_akg8l")
-animation = &"tutorial_receiver"
-
-[node name="Sprite2D2" type="Sprite2D" parent="Label"]
-position = Vector2(133, -141)
-scale = Vector2(1.32, 1.32)
-texture = ExtResource("4_61ooo")
-
-[node name="Label" type="Label" parent="Label"]
-offset_left = -503.0
-offset_top = -278.0
-offset_right = -24.0
-offset_bottom = -191.0
-text = "Click (touch on mobile) and hold charge a throw..."
-label_settings = SubResource("LabelSettings_qkelh")
-autowrap_mode = 2
-uppercase = true
-
-[node name="Label2" type="Label" parent="Label"]
-offset_left = -503.0
-offset_top = -166.0
-offset_right = -64.0
-offset_bottom = -79.0
-text = "aim with your mouse (finger on mobile)..."
-label_settings = SubResource("LabelSettings_qkelh")
-autowrap_mode = 2
-uppercase = true
-
-[node name="Label3" type="Label" parent="Label"]
-offset_left = -503.0
-offset_top = -54.0
-offset_right = 7.0
-offset_bottom = 9.0
-text = "release and pass to a receiver!"
-label_settings = SubResource("LabelSettings_qkelh")
-autowrap_mode = 2
-uppercase = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BacktoMain" type="Button" parent="CanvasLayer/Control"]
-layout_mode = 1
+[node name="BacktoMain" type="Button" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = 196.0
-offset_right = 150.0
-offset_bottom = 266.0
+offset_left = 446.0
+offset_top = 507.0
+offset_right = 746.0
+offset_bottom = 577.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_07p2f")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
+[node name="Label" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -59.5
-offset_top = 203.0
-offset_right = 59.5
-offset_bottom = 253.0
+offset_left = 536.5
+offset_top = 514.0
+offset_right = 655.5
+offset_bottom = 564.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Return"
 label_settings = SubResource("LabelSettings_hlngo")
 
-[connection signal="pressed" from="CanvasLayer/Control/BacktoMain" to="." method="_on_backto_main_pressed"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574, 263)
+scale = Vector2(2.91333, 2.48)
+texture = ExtResource("1_vjsvx")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(841, 164)
+scale = Vector2(1.61111, 1.61111)
+sprite_frames = SubResource("SpriteFrames_2nuxc")
+animation = &"mouse_click"
+frame_progress = 0.339457
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(846, 359)
+scale = Vector2(3.35, 3.61667)
+sprite_frames = SubResource("SpriteFrames_akg8l")
+animation = &"tutorial_receiver"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(845.999, 258)
+scale = Vector2(1.32, 1.32)
+texture = ExtResource("4_61ooo")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 210.0
+offset_top = 121.0
+offset_right = 689.0
+offset_bottom = 208.0
+text = "Click (touch on mobile) and hold charge a throw..."
+label_settings = SubResource("LabelSettings_qkelh")
+autowrap_mode = 2
+uppercase = true
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 210.0
+offset_top = 233.0
+offset_right = 649.0
+offset_bottom = 320.0
+text = "aim with your mouse (finger on mobile)..."
+label_settings = SubResource("LabelSettings_qkelh")
+autowrap_mode = 2
+uppercase = true
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 210.0
+offset_top = 345.0
+offset_right = 720.0
+offset_bottom = 408.0
+text = "release and pass to a receiver!"
+label_settings = SubResource("LabelSettings_qkelh")
+autowrap_mode = 2
+uppercase = true
+
+[connection signal="pressed" from="BacktoMain" to="Node2D" method="_on_backto_main_pressed"]

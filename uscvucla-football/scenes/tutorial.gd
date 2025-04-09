@@ -6,21 +6,20 @@ var tutorial_arrow_rot_clockwise = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Label/AnimatedSprite2D2.play("tutorial_receiver")
-	$Label/AnimatedSprite2D3.play("mouse_click")
+	$"../AnimatedSprite2D2".play("tutorial_receiver")
+	$"../AnimatedSprite2D3".play("mouse_click")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if tutorial_arrow_rot_clockwise:
-		$Label/Sprite2D2.rotation_degrees += tutorial_arrow_rot_speed * delta
-		if $Label/Sprite2D2.rotation_degrees > 45:
+		$"../Sprite2D2".rotation_degrees += tutorial_arrow_rot_speed * delta
+		if $"../Sprite2D2".rotation_degrees > 45:
 			tutorial_arrow_rot_clockwise = false
 	else:
-		$Label/Sprite2D2.rotation_degrees -= tutorial_arrow_rot_speed * delta
-		if $Label/Sprite2D2.rotation_degrees < -45:
+		$"../Sprite2D2".rotation_degrees -= tutorial_arrow_rot_speed * delta
+		if $"../Sprite2D2".rotation_degrees < -45:
 			tutorial_arrow_rot_clockwise = true
-	
 
 
 func _on_backto_main_pressed() -> void:
