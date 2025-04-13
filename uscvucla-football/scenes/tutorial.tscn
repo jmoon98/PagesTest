@@ -112,35 +112,41 @@ animations = [{
 [sub_resource type="LabelSettings" id="LabelSettings_qkelh"]
 font_size = 30
 
-[node name="Control" type="Node2D"]
-
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_lviw1")
 
 [node name="BacktoMain" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 446.0
-offset_top = 507.0
-offset_right = 746.0
-offset_bottom = 577.0
+offset_left = -142.0
+offset_top = 175.0
+offset_right = 158.0
+offset_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_07p2f")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 536.5
-offset_top = 514.0
-offset_right = 655.5
-offset_bottom = 564.0
+offset_left = -51.5
+offset_top = 182.0
+offset_right = 67.5
+offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Return"
@@ -199,4 +205,4 @@ label_settings = SubResource("LabelSettings_qkelh")
 autowrap_mode = 2
 uppercase = true
 
-[connection signal="pressed" from="BacktoMain" to="Node2D" method="_on_backto_main_pressed"]
+[connection signal="pressed" from="BacktoMain" to="." method="_on_backto_main_pressed"]
