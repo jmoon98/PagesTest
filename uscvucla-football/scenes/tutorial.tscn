@@ -152,8 +152,11 @@ grow_vertical = 2
 text = "Return"
 label_settings = SubResource("LabelSettings_hlngo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(574, 263)
+[node name="Sprite2D" type="TextureRect" parent="."]
+offset_left = 131.0
+offset_top = 71.0
+offset_right = 431.0
+offset_bottom = 221.0
 scale = Vector2(2.91333, 2.48)
 texture = ExtResource("1_vjsvx")
 

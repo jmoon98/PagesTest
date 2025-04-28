@@ -1,9 +1,7 @@
+res://scenes/title_screen.tscn
 res://scenes/test.tscn
 res://scenes/game_over.tscn
-res://scenes/title_screen.tscn
 res://scenes/tutorial.tscn
 res://scenes/usc_linemen.tscn
 res://scenes/ucla_linemen.tscn
 res://scenes/player.tscn
-res://scripts/title_screen.gd
-res://scenes/tutorial.gd

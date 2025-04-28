@@ -1,6 +1,7 @@
-Control
 SubViewport
 SubViewportContainer
+TextureRect
+Control
 Node2D
 CanvasLayer
 AnimatedSprite2D
@@ -11,4 +12,3 @@ Button
 CenterContainer
 VBoxContainer
 CollisionShape2D
-Area2D
