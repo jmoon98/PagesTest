@@ -6,11 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c5lfpip5u3nyj" path="res://assets/sprites/usc_running.png" id="3_nbovt"]
 [ext_resource type="Texture2D" uid="uid://d18tg278ppdjm" path="res://assets/sprites/arrow2.png" id="4_61ooo"]
 
-[sub_resource type="Theme" id="Theme_07p2f"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_hlngo"]
-font_size = 36
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4y4j"]
 atlas = ExtResource("3_jqqm4")
 region = Rect2(0, 0, 45, 45)
@@ -112,6 +107,11 @@ animations = [{
 [sub_resource type="LabelSettings" id="LabelSettings_qkelh"]
 font_size = 30
 
+[sub_resource type="Theme" id="Theme_07p2f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hlngo"]
+font_size = 36
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -121,61 +121,39 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lviw1")
 
-[node name="BacktoMain" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -142.0
-offset_top = 175.0
-offset_right = 158.0
-offset_bottom = 245.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_07p2f")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -51.5
-offset_top = 182.0
-offset_right = 67.5
-offset_bottom = 232.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Return"
-label_settings = SubResource("LabelSettings_hlngo")
-
 [node name="Sprite2D" type="TextureRect" parent="."]
-offset_left = 131.0
-offset_top = 71.0
-offset_right = 431.0
-offset_bottom = 221.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -171.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2.91333, 2.48)
 texture = ExtResource("1_vjsvx")
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-position = Vector2(841, 164)
-scale = Vector2(1.61111, 1.61111)
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(296.654, 71.0685)
+scale = Vector2(0.553013, 0.649641)
 sprite_frames = SubResource("SpriteFrames_2nuxc")
 animation = &"mouse_click"
 frame_progress = 0.339457
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(846, 359)
-scale = Vector2(3.35, 3.61667)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(280.435, 131.855)
+scale = Vector2(1.14989, 1.45833)
 sprite_frames = SubResource("SpriteFrames_akg8l")
 animation = &"tutorial_receiver"
+centered = false
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(845.999, 258)
-scale = Vector2(1.32, 1.32)
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(298.37, 108.972)
+scale = Vector2(0.45309, 0.532258)
 texture = ExtResource("4_61ooo")
 
 [node name="Label2" type="Label" parent="."]
@@ -185,10 +163,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -336.0
-offset_top = -199.0
-offset_right = 143.0
-offset_bottom = -112.0
+offset_left = -306.0
+offset_top = -175.0
+offset_right = 173.0
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Click (touch on mobile) and hold charge a throw..."
@@ -203,10 +181,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -336.0
-offset_top = -94.0
-offset_right = 103.0
-offset_bottom = -7.0
+offset_left = -306.0
+offset_top = -70.0
+offset_right = 133.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "aim with your mouse (finger on mobile)..."
@@ -221,15 +199,46 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -336.0
-offset_top = 11.0
-offset_right = 174.0
-offset_bottom = 74.0
+offset_left = -306.0
+offset_top = 35.0
+offset_right = 204.0
+offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "release and pass to a receiver!"
 label_settings = SubResource("LabelSettings_qkelh")
 autowrap_mode = 2
 uppercase = true
+
+[node name="BacktoMain" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = 175.0
+offset_right = 201.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_07p2f")
+
+[node name="Label" type="Label" parent="BacktoMain"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -28.0
+offset_right = 59.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return"
+label_settings = SubResource("LabelSettings_hlngo")
 
 [connection signal="pressed" from="BacktoMain" to="." method="_on_backto_main_pressed"]

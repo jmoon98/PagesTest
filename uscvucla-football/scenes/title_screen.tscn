@@ -298,77 +298,79 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_blr32")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(1152, 648)
-render_target_update_mode = 4
-
-[node name="Backdrop" type="TextureRect" parent="SubViewportContainer/SubViewport"]
+[node name="Backdrop" type="TextureRect" parent="."]
 texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.08273, 1.08273)
-texture = ExtResource("2_8ml20")
-expand_mode = 1
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport"]
-position = Vector2(80, 232)
-sprite_frames = SubResource("SpriteFrames_6u4h6")
-animation = &"running_4"
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport"]
-position = Vector2(1022, 590)
-sprite_frames = SubResource("SpriteFrames_6u4h6")
-animation = &"running_4"
-
-[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -241.0
+offset_left = -600.0
+offset_top = -400.0
+offset_right = 600.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.08273, 1.08273)
+texture = ExtResource("2_8ml20")
+stretch_mode = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Backdrop"]
+position = Vector2(96.0535, 284.466)
+scale = Vector2(2.77077, 2.77077)
+sprite_frames = SubResource("SpriteFrames_6u4h6")
+animation = &"running_4"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Backdrop"]
+position = Vector2(966.076, 615.112)
+scale = Vector2(2.77077, 2.77077)
+sprite_frames = SubResource("SpriteFrames_6u4h6")
+animation = &"running_4"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
 offset_top = -199.0
-offset_right = 239.0
+offset_right = 291.0
 offset_bottom = 171.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.133196, 0.133196, 0.133196, 0.827451)
 
-[node name="Label" type="Label" parent="SubViewportContainer/SubViewport"]
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -213.0
-offset_top = 160.0
-offset_right = 213.0
-offset_bottom = 229.0
+offset_left = -212.0
+offset_top = 35.0
+offset_right = 214.0
+offset_bottom = 104.0
 grow_horizontal = 2
 text = "FOOTBALL DERBY"
 label_settings = SubResource("LabelSettings_48nqi")
 
-[node name="StartGame" type="Button" parent="SubViewportContainer/SubViewport"]
+[node name="StartGame" type="Button" parent="ColorRect"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -74.0
-offset_right = 200.0
-offset_bottom = -4.0
+offset_left = -199.0
+offset_top = -60.0
+offset_right = 201.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label2" type="Label" parent="SubViewportContainer/SubViewport/StartGame"]
+[node name="Label2" type="Label" parent="ColorRect/StartGame"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -384,20 +386,21 @@ grow_vertical = 2
 text = "Start"
 label_settings = SubResource("LabelSettings_5cxya")
 
-[node name="Tutorial" type="Button" parent="SubViewportContainer/SubViewport"]
+[node name="Tutorial" type="Button" parent="ColorRect"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = 46.0
-offset_right = 200.0
-offset_bottom = 116.0
+offset_left = -199.0
+offset_top = 60.0
+offset_right = 201.0
+offset_bottom = 130.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Tutorial"]
+[node name="Label" type="Label" parent="ColorRect/Tutorial"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -414,5 +417,5 @@ text = "Tutorial
 "
 label_settings = SubResource("LabelSettings_aifnq")
 
-[connection signal="pressed" from="SubViewportContainer/SubViewport/StartGame" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="SubViewportContainer/SubViewport/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="ColorRect/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="ColorRect/Tutorial" to="." method="_on_tutorial_pressed"]
